@@ -249,13 +249,16 @@ section:not(#header) .content {
     border: 1px solid rgba(98, 33, 151, 0.3);
   }
 
-  .lang-btn .lang-flag {
+  .lang-btn .lang-flag,
+  .lang-menu .lang-flag {
     font-size: 20px;
     line-height: 1;
     display: inline-block;
     width: 20px;
     height: 14px;
-    background-size: cover;
+    min-width: 20px;
+    min-height: 14px;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -275,11 +278,14 @@ section:not(#header) .content {
   }
 }
 
-.lang-flag {
+.lang-flag,
+.lang-menu .lang-flag {
   display: inline-block;
   width: 18px;
   height: 13px;
-  background-size: cover;
+  min-width: 18px;
+  min-height: 13px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -340,13 +346,16 @@ section:not(#header) .content {
   background: rgba(255,255,255,0.08);
   color: var(--white-color);
 }
-.lang-btn .lang-flag {
+.lang-btn .lang-flag,
+.lang-menu .lang-flag {
   font-size: 16px;
   line-height: 1;
   display: inline-block;
   width: 18px;
   height: 13px;
-  background-size: cover;
+  min-width: 18px;
+  min-height: 13px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   vertical-align: middle;
