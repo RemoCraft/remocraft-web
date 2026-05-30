@@ -251,6 +251,7 @@ section:not(#header) .content {
 
   .lang-btn .lang-flag {
     font-size: 20px;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Symbol", system-ui, sans-serif;
   }
 
   .lang-menu {
@@ -320,7 +321,11 @@ section:not(#header) .content {
   background: rgba(255,255,255,0.08);
   color: var(--white-color);
 }
-.lang-btn .lang-flag { font-size: 16px; line-height: 1; }
+.lang-btn .lang-flag {
+  font-size: 16px;
+  line-height: 1;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Twemoji Mozilla", "Segoe UI Symbol", system-ui, sans-serif;
+}
 .lang-menu {
   position: absolute;
   right: 0;
