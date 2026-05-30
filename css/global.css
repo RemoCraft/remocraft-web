@@ -281,11 +281,11 @@ section:not(#header) .content {
 .lang-flag,
 .lang-menu .lang-flag {
   display: inline-block;
-  width: 18px;
-  height: 13px;
-  min-width: 18px;
-  min-height: 13px;
-  background-size: contain;
+  width: 20px;
+  height: 14px;
+  min-width: 20px;
+  min-height: 14px;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   vertical-align: middle;
@@ -351,11 +351,11 @@ section:not(#header) .content {
   font-size: 16px;
   line-height: 1;
   display: inline-block;
-  width: 18px;
-  height: 13px;
-  min-width: 18px;
-  min-height: 13px;
-  background-size: contain;
+  width: 20px;
+  height: 14px;
+  min-width: 20px;
+  min-height: 14px;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   vertical-align: middle;
