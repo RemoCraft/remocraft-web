@@ -275,6 +275,16 @@ section:not(#header) .content {
   }
 }
 
+.lang-flag {
+  display: inline-block;
+  width: 18px;
+  height: 13px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
 .lang-flag.en { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30M60 0L0 30' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E"); }
 .lang-flag.es { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23C60B1E'/%3E%3Crect y='10' width='60' height='10' fill='%23FFC400'/%3E%3C/svg%3E"); }
 
