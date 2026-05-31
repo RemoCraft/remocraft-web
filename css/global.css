@@ -74,6 +74,13 @@ body {
 .navbar .menu-mobile .logo img {
   max-width: 40px;
   height: auto;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.navbar .menu-mobile .logo img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(116, 43, 175, 0.6));
 }
 
 .navbar .menu-mobile .logo h3 {
