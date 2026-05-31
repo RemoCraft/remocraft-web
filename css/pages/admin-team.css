@@ -183,8 +183,8 @@
 
 @media screen and (max-width: 530px) {
     #header .content {
-        justify-content: start;
-        align-items: start;
+        justify-content: center;
+        align-items: center;
     }
 
     #header .content .info .title {
