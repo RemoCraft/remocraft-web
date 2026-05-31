@@ -141,6 +141,24 @@
     margin: 20px 0;
 }
 
+@media screen and (max-width: 640px) {
+    .pagination {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .pagination .mc-btn {
+        width: min(100%, 240px);
+    }
+
+    .page-info {
+        white-space: normal;
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
 @media screen and (max-width: 867px) {
     #header .content {
         padding: 90px 30px;

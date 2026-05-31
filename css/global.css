@@ -35,6 +35,18 @@
   --default-rank-color: rgba(255, 255, 255, 0.2);
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+img, picture, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   background: var(--background-color);
   font-family: var(--main-font);
