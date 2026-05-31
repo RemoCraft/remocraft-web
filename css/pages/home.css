@@ -295,25 +295,39 @@
     gap: 60px;
 }
 
-#minigames .content .game:nth-child(even) img{
+#minigames .content .game:nth-child(even) .hover-image-wrapper {
     order: 1;
 }
 
-#minigames .content .game:nth-child(even) img:hover {
+#minigames .content .game .hover-image-wrapper {
+    transition: transform 0.2s ease;
+}
+
+#minigames .content .game:hover .hover-image-wrapper {
+    transform: rotate(-1deg);
+}
+
+#minigames .content .game:nth-child(even):hover .hover-image-wrapper {
     transform: rotate(2deg);
 }
 
-#minigames .content .game img {
+#minigames .content .game .hover-image-wrapper img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 40px 3px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: opacity 0.3s ease;
     opacity: 1;
+    display: block;
 }
 
-#minigames .content .game img:hover {
-    transform: rotate(-1deg);
+#minigames .content .game .hover-image-wrapper img.hover-image-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
 }
 
 #minigames .content .game .info {
