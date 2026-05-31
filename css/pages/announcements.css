@@ -17,11 +17,14 @@
     gap: 20px;
     padding: 150px;
     width: 100%;
+    align-items: center;
+    text-align: center;
 }
 
 #header .content .info {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #header .content .info .minecraft-server-ip {
