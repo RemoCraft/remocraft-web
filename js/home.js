@@ -49,22 +49,38 @@ const setupHoverImageCards = () => {
         if (!hoverPaths.length) return;
 
         const originalSrc = img.src;
+        let fadeTimeout = null;
+        const fadeDuration = 200;
 
         hoverPaths.forEach(src => {
             const preloaded = new Image();
             preloaded.src = src;
         });
 
+        const fadeToSrc = (newSrc) => {
+            if (!newSrc || img.src === newSrc) return;
+            if (fadeTimeout) {
+                clearTimeout(fadeTimeout);
+            }
+
+            img.style.transition = `opacity ${fadeDuration}ms ease`;
+            img.style.opacity = '0';
+
+            fadeTimeout = setTimeout(() => {
+                img.src = newSrc;
+                img.style.opacity = '1';
+                fadeTimeout = null;
+            }, fadeDuration);
+        };
+
         img.addEventListener('mouseenter', () => {
             const randomIndex = Math.floor(Math.random() * hoverPaths.length);
             const randomSrc = hoverPaths[randomIndex];
-            if (randomSrc && img.src !== randomSrc) {
-                img.src = randomSrc;
-            }
+            fadeToSrc(randomSrc);
         });
 
         img.addEventListener('mouseleave', () => {
-            img.src = originalSrc;
+            fadeToSrc(originalSrc);
         });
     });
 };

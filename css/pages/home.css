@@ -309,6 +309,7 @@
     object-fit: cover;
     border-radius: 40px 3px;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 1;
 }
 
 #minigames .content .game img:hover {
