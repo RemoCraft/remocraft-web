@@ -20,15 +20,11 @@
     align-items: center;
     padding: 150px;
     width: 100%;
-    min-width: 0;
-    text-align: center;
 }
 
 #header .content .info {
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    align-items: center;
 }
 
 #header .content .info .minecraft-server-ip {
@@ -41,13 +37,7 @@
 #header .content .info .title {
     color: var(--white-color);
     text-transform: uppercase;
-    font-size: clamp(28px, 5vw, 65px);
     font-weight: 900;
-    max-width: 100%;
-    min-width: 0;
-    white-space: normal;
-    overflow-wrap: normal;
-    word-break: normal;
 }
 
 #header .content .info .title span {
