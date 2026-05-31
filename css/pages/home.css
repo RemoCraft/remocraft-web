@@ -509,7 +509,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--stats-background);
     padding: 20px;
     border-radius: 8px;
     height: 100%;
@@ -532,9 +532,15 @@
     gap: 20px;
 }
 
-#vote .content .links .link .link-description .description,
+#vote .content .links .link .link-description .description {
+    color: var(--description-color);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
 #vote .content .links .link .link-description p {
-    color: var(--white-color);
+    color: var(--main-color);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
