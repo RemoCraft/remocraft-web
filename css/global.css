@@ -75,16 +75,13 @@ section a,
   color: var(--main-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 2px solid var(--main-color);
-  padding-bottom: 2px;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 section a:hover,
 #contacts a:hover,
 .announcement-body a:hover {
   color: var(--white-color);
-  border-bottom-color: var(--white-color);
   text-shadow: 0 0 8px rgba(116, 43, 175, 0.6);
 }
 

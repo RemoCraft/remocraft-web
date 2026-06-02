@@ -96,6 +96,17 @@
     line-height: 1.8;
 }
 
+.announcement-body ul,
+.announcement-body ol {
+    margin: 1rem 0 1rem 1.5rem;
+    padding-left: 1.3rem;
+    list-style-position: outside;
+}
+
+.announcement-body li {
+    margin: 0.4rem 0;
+}
+
 .pagination {
     display: flex;
     justify-content: center;
