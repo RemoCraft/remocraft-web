@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "number": 47,
+    "title": "📢✨ **Actualización del sistema de crafteo y encantamientos** ✨📢",
+    "body": "Para mejorar el sistema de crafteo y evitar los problemas que llevábamos tiempo sufriendo, hemos tenido que **rehacer por completo el sistema de encantamientos de slots**.\n\n────────────────────────\n🛠️ **Nuevo sistema de restauración de ítems**\n────────────────────────\n\n➡️ **/restoreitems**\n\nEste comando detectará todos los ítems custom de vuestro inventario y los restaurará automáticamente.\n\n⚠️ **Excepciones:**\n• Ítems que ya tengan encantamientos aplicados.\n• Ítems con Armor Trims.\n• Ítems cuya cantidad máxima de encantamientos haya sido modificada.\n\n────────────────────────\n🔮 **Mejoras en Encantador**\n────────────────────────\n\nAhora el trabajo de **Encantador** detecta correctamente los encantamientos custom.\n\n────────────────────────\n🌐 **Nueva web oficial**\n────────────────────────\n\n**www.remocraft.com**\n\nEn ella iremos publicando anuncios, guías y otra información importante del servidor.\n\n────────────────────────\n⚡ **Nuevo sistema de slots**\n────────────────────────\n\n• Ahora se necesitan **250 niveles** en lugar de 500.\n• El sistema de **Suerte** sigue funcionando.\n• Una vez obtenido el resultado, el ítem tendrá un **100% de probabilidad de añadir el slot**.\n\nAntes era posible conseguir objetos que solo añadían el slot con probabilidades reducidas, como un **10%**.\n\n➡️ **Shift + clic derecho** en una mesa de encantamientos para consultar los slots de un objeto.\n\n────────────────────────\n🐛 **Reporte de errores**\n────────────────────────\n\nSi encontráis cualquier bug o comportamiento extraño, por favor reportadlo.\n\nGracias por vuestra paciencia y por ayudarnos a mejorar RemoCraft ❤️",
+    "url": "https://github.com/RemoCraft/remocraft-web/issues/47",
+    "created_at": "2026-06-02T16:41:41Z",
+    "updated_at": "2026-06-02T16:41:41Z",
+    "state": "open",
+    "author": "RemoCraft Announcements",
+    "labels": [
+      "announcement-es"
+    ]
+  }
+]
