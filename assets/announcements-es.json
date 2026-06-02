@@ -31,12 +31,10 @@
     "body": "mensaje de la prueba",
     "url": "https://github.com/RemoCraft/remocraft-web/issues/35",
     "created_at": "2026-05-30T16:17:20Z",
-    "updated_at": "2026-05-30T16:17:20Z",
-    "state": "open",
+    "updated_at": "2026-06-02T13:50:00Z",
+    "state": "closed",
     "author": "RemoCraft Announcements",
-    "labels": [
-      "announcement-es"
-    ]
+    "labels": []
   },
   {
     "number": 33,
@@ -44,11 +42,9 @@
     "body": "españa",
     "url": "https://github.com/RemoCraft/remocraft-web/issues/33",
     "created_at": "2026-05-30T16:09:51Z",
-    "updated_at": "2026-05-30T16:09:51Z",
-    "state": "open",
+    "updated_at": "2026-06-02T13:49:59Z",
+    "state": "closed",
     "author": "RemoCraft Announcements",
-    "labels": [
-      "announcement-es"
-    ]
+    "labels": []
   }
 ]

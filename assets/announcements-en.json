@@ -13,58 +13,6 @@
     ]
   },
   {
-    "number": 26,
-    "title": "dfdf",
-    "body": "dfdfdf",
-    "url": "https://github.com/RemoCraft/remocraft-web/issues/26",
-    "created_at": "2026-05-30T15:40:14Z",
-    "updated_at": "2026-05-30T15:40:14Z",
-    "state": "open",
-    "author": "RemoCraft Announcements",
-    "labels": [
-      "announcement-en"
-    ]
-  },
-  {
-    "number": 25,
-    "title": "bbb",
-    "body": "bbbb",
-    "url": "https://github.com/RemoCraft/remocraft-web/issues/25",
-    "created_at": "2026-05-30T15:39:54Z",
-    "updated_at": "2026-05-30T15:39:54Z",
-    "state": "open",
-    "author": "RemoCraft Announcements",
-    "labels": [
-      "announcement-en"
-    ]
-  },
-  {
-    "number": 19,
-    "title": "sdsd",
-    "body": "sdsds",
-    "url": "https://github.com/RemoCraft/remocraft-web/issues/19",
-    "created_at": "2026-05-30T14:29:27Z",
-    "updated_at": "2026-05-30T14:29:27Z",
-    "state": "open",
-    "author": "RemoCraft Announcements",
-    "labels": [
-      "announcement-en"
-    ]
-  },
-  {
-    "number": 17,
-    "title": "asasa",
-    "body": "sasasa",
-    "url": "https://github.com/RemoCraft/remocraft-web/issues/17",
-    "created_at": "2026-05-30T14:22:43Z",
-    "updated_at": "2026-05-30T14:22:43Z",
-    "state": "open",
-    "author": "RemoCraft Announcements",
-    "labels": [
-      "announcement-en"
-    ]
-  },
-  {
     "number": 11,
     "title": "Prueba 2",
     "body": "🔮✨ **Enchant Plugin Migration Completed** ✨🔮\n\nWe have successfully migrated the **enchants plugin** and also replaced the plugin responsible for **inventory, XP, health, achievements, and data synchronization** with a newer, more stable one that receives active updates and should prevent the issues we’ve had recently.\n\nIf you notice any new bugs, please open a ticket to report them.\n\nWe also believe we’ve fixed the issue where the **Blacksmith job was giving less money when crafting**.  \nMoney is now given **instantly** (it no longer appears in chat).\n\n────────────────────────\n⚡ **New Enchant System**\n────────────────────────\n\nEnchants now work using **charges**:\n\n• By doing **Shift + right-click**, you refill charges.  \n• Each charge costs **10 XP**.  \n• If you place the enchanted item in an **anvil** and “repair” it using an **experience bottle**, it will recharge charges directly (more efficient), up to a maximum of **100 charges**.\n\nWe’ll keep monitoring everything closely.  \nThanks for your patience 💛",
