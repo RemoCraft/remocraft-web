@@ -4,6 +4,10 @@ const perPage = 10;
 let announcements = [];
 let currentPage = 0;
 
+// Configure marked to treat single newlines as line breaks (like Discord)
+if (window.marked && typeof window.marked.setOptions === 'function') {
+    window.marked.setOptions({ breaks: true });
+}
 const announcementsList = document.getElementById('announcements-list');
 const statusMessage = document.getElementById('status');
 const pagination = document.getElementById('pagination');
@@ -60,7 +64,13 @@ function renderPage() {
 
         const content = document.createElement('div');
         content.className = 'announcement-body';
-        content.innerHTML = marked.parse(a.body || '');
+        // Preprocess body: convert '•' bullets to Markdown list markers and
+        // normalize newlines so Markdown renders lists and line breaks like Discord.
+        let body = a.body || '';
+        body = body.replace(/\r\n/g, '\n');
+        // Replace bullets at line starts or after a newline with '- '
+        body = body.replace(/(^|\n)\s*•\s+/g, '$1- ');
+        content.innerHTML = marked.parse(body);
 
         const meta = document.createElement('div');
         meta.className = 'announcement-meta';
