@@ -44,6 +44,20 @@ async function loadAnnouncements() {
     }
 }
 
+function escapeHTML(text) {
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function parseTitleMarkdown(title) {
+    const safeTitle = escapeHTML(title || '');
+    return safeTitle.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
 function renderPage() {
     announcementsList.innerHTML = '';
     const start = currentPage * perPage;
@@ -60,7 +74,8 @@ function renderPage() {
         card.className = 'announcement-card';
 
         const title = document.createElement('h2');
-        title.textContent = a.title || `${getText('Announcement', 'Anuncio')} #${a.number || (start + idx + 1)}`;
+        const titleText = a.title || `${getText('Announcement', 'Anuncio')} #${a.number || (start + idx + 1)}`;
+        title.innerHTML = parseTitleMarkdown(titleText);
 
         const content = document.createElement('div');
         content.className = 'announcement-body';
