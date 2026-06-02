@@ -1,5 +1,18 @@
 [
   {
+    "number": 48,
+    "title": "📢✨ **Crafting & Enchantments System Update** ✨📢",
+    "body": "To improve the crafting system and prevent the issues we've been experiencing, we have had to **completely rebuild the enchantment slot system**.\n\n────────────────────────\n🛠️ **New Item Restoration System**\n────────────────────────\n\n➡️ **/restoreitems**\n\nThis command will detect all custom items in your inventory and automatically restore them.\n\n⚠️ **Exceptions:**\n• Items that already have enchantments applied.\n• Items with Armor Trims.\n• Items whose maximum enchantment slots have been modified.\n\n────────────────────────\n🔮 **Enchanter Improvements**\n────────────────────────\n\nThe **Enchanter** job now correctly detects custom enchantments.\n\n────────────────────────\n🌐 **New Official Website**\n────────────────────────\n\n**www.remocraft.com**\n\nWe will use it to publish announcements, guides, important links, and other server information.\n\n────────────────────────\n⚡ **New Enchantment Slot System**\n────────────────────────\n\n• You now need **250 levels** instead of 500.\n• The **Luck** system still works.\n• Once you obtain the result, the item will have a **100% chance to add the slot**.\n\nPreviously, it was possible to obtain items that only added the slot with reduced chances, such as **10%**.\n\n➡️ **Shift + right-click** an enchanting table to view an item's slot count.\n\n────────────────────────\n🐛 **Bug Reports**\n────────────────────────\n\nIf you find any bugs or strange behavior, please report them.\n\nThank you for your patience and for helping improve RemoCraft ❤️",
+    "url": "https://github.com/RemoCraft/remocraft-web/issues/48",
+    "created_at": "2026-06-02T16:42:28Z",
+    "updated_at": "2026-06-02T16:42:28Z",
+    "state": "open",
+    "author": "RemoCraft Announcements",
+    "labels": [
+      "announcement-en"
+    ]
+  },
+  {
     "number": 11,
     "title": "Prueba 2",
     "body": "🔮✨ **Enchant Plugin Migration Completed** ✨🔮\n\nWe have successfully migrated the **enchants plugin** and also replaced the plugin responsible for **inventory, XP, health, achievements, and data synchronization** with a newer, more stable one that receives active updates and should prevent the issues we’ve had recently.\n\nIf you notice any new bugs, please open a ticket to report them.\n\nWe also believe we’ve fixed the issue where the **Blacksmith job was giving less money when crafting**.  \nMoney is now given **instantly** (it no longer appears in chat).\n\n────────────────────────\n⚡ **New Enchant System**\n────────────────────────\n\nEnchants now work using **charges**:\n\n• By doing **Shift + right-click**, you refill charges.  \n• Each charge costs **10 XP**.  \n• If you place the enchanted item in an **anvil** and “repair” it using an **experience bottle**, it will recharge charges directly (more efficient), up to a maximum of **100 charges**.\n\nWe’ll keep monitoring everything closely.  \nThanks for your patience 💛",
