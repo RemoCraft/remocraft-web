@@ -468,6 +468,7 @@ section:not(#header) .content {
     right: 0;
     top: calc(100% + 8px);
     width: 100%;
+    min-width: 100%;
     margin: 0;
     padding: 10px 0 16px;
     background: rgba(15, 7, 18, 0.98);
@@ -482,23 +483,24 @@ section:not(#header) .content {
   .lang-menu a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     margin: 8px 0;
-    padding: 14px 18px 14px 52px;
+    padding: 14px 18px;
     font-size: 18px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--description-color);
-    text-align: center;
-    position: relative;
+    text-decoration: none;
+    gap: 12px;
   }
 
   .lang-menu a .lang-flag {
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-right: 0;
   }
 
   .lang-menu a .lang-option-text {
@@ -529,20 +531,20 @@ section:not(#header) .content {
 .lang-menu a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 12px 18px 12px 52px;
+  justify-content: flex-start;
+  padding: 12px 18px;
   color: var(--description-color);
   text-decoration: none;
   border-radius: 10px;
   transition: background 0.2s ease, color 0.2s ease;
+  gap: 12px;
 }
 
 .lang-menu a .lang-flag {
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
 }
 
 .lang-menu a:hover {
