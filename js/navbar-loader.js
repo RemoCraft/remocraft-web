@@ -156,7 +156,10 @@ function markCurrentPage() {
         const href = link.getAttribute('href');
         if (!href) return;
 
-        const linkPath = normalizePath(new URL(href, window.location.origin).pathname);
+        const linkUrl = new URL(href, window.location.origin);
+        if (linkUrl.origin !== window.location.origin) return;
+
+        const linkPath = normalizePath(linkUrl.pathname);
         if (linkPath === normalizedPath) {
             link.classList.add('active');
         }
