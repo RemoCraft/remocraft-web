@@ -78,11 +78,11 @@ const contactForm = document.querySelector(".contact-form");
 const inputWithLocationAfterSubmit = document.querySelector(".location-after-submit");
 
 const assetPrefix = (() => {
-    const match = location.pathname.match(/^\/(\w{2})\//);
-    if (match && match[1] !== '') {
-        return '../';
-    }
-    return '';
+    const pathname = location.pathname;
+    const segments = pathname.split('/').filter(Boolean);
+    if (segments.length <= 1) return '';
+    const depth = pathname.endsWith('/') ? segments.length : Math.max(0, segments.length - 1);
+    return '../'.repeat(depth);
 })();
 const getAssetPath = (relativePath) => `${assetPrefix}${relativePath}`;
 

@@ -61,6 +61,14 @@ function getRelativeRootPath() {
     return '../'.repeat(depth);
 }
 
+function resolveNavbarAssetPaths(html) {
+    const rootPath = getRelativeRootPath();
+    if (!rootPath) return html;
+    return html.replace(/(src)=\"\/(images|css|js)([^"]*)\"/g,
+        (match, attr, target, rest) => `${attr}="${rootPath}${target}${rest}"`
+    );
+}
+
 async function loadNavbar() {
     try {
         const { currentLang } = getCurrentPageInfo();
@@ -74,6 +82,8 @@ async function loadNavbar() {
         if (currentLang === 'es') {
             navbarHTML = translateNavbar(navbarHTML, 'es');
         }
+        
+        navbarHTML = resolveNavbarAssetPaths(navbarHTML);
         
         // Insert navbar at the top of body
         const navbarContainer = document.createElement('div');
@@ -119,21 +129,31 @@ async function loadFooter() {
     }
 }
 
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function translateNavbar(html, language) {
     if (!navbarTranslations[language]) return html;
-    
-    let translatedHtml = html;
     const translations = navbarTranslations[language];
-    
-    // Translate text content of links
-    Object.keys(translations).forEach(englishText => {
-        const spanishText = translations[englishText];
-        // Use word boundaries to match exact words
-        const regex = new RegExp(`>\\s*${englishText}\\s*<`, 'g');
-        translatedHtml = translatedHtml.replace(regex, `> ${spanishText} <`);
-    });
-    
-    return translatedHtml;
+    const container = document.createElement('div');
+    container.innerHTML = html;
+
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+    let node = walker.nextNode();
+    while (node) {
+        let text = node.nodeValue;
+        Object.entries(translations).forEach(([englishText, spanishText]) => {
+            const regex = new RegExp(`\\b${escapeRegExp(englishText)}\\b`, 'g');
+            text = text.replace(regex, spanishText);
+        });
+        if (text !== node.nodeValue) {
+            node.nodeValue = text;
+        }
+        node = walker.nextNode();
+    }
+
+    return container.innerHTML;
 }
 
 function translateFooter(html, language) {
