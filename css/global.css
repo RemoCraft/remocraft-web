@@ -464,11 +464,11 @@ section:not(#header) .content {
 
   .lang-menu {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: -12px;
+    right: -12px;
     top: calc(100% + 8px);
-    width: 100%;
-    min-width: 100%;
+    width: calc(100% + 24px);
+    min-width: calc(100% + 24px);
     margin: 0;
     padding: 10px 0 16px;
     background: rgba(15, 7, 18, 0.98);
@@ -478,12 +478,13 @@ section:not(#header) .content {
     display: none;
     flex-direction: column;
     z-index: 60;
+    box-sizing: border-box;
   }
 
   .lang-menu a {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     margin: 8px 0;
     padding: 14px 18px;
@@ -491,20 +492,16 @@ section:not(#header) .content {
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--description-color);
-    text-decoration: none;
-    gap: 12px;
+    text-align: center;
+    gap: 10px;
   }
 
   .lang-menu a .lang-flag {
     position: static;
-    top: auto;
-    left: auto;
     transform: none;
-    margin-right: 0;
   }
 
   .lang-menu a .lang-option-text {
-    width: 100%;
     display: inline-block;
   }
 }
@@ -655,11 +652,18 @@ section:not(#header) .content {
   flex-direction: column;
 }
 .lang-menu a {
-  display: block;
-  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
   color: var(--description-color);
   text-decoration: none;
   border-radius: 6px;
+}
+.lang-menu a .lang-flag {
+  position: static;
+  transform: none;
 }
 .lang-menu a:hover { background: rgba(255,255,255,0.03); color: var(--white-color); }
 .lang-link.active { color: var(--white-color); font-weight: 800; }
