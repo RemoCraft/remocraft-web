@@ -435,6 +435,8 @@ section:not(#header) .content {
     margin-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 20px;
+    position: relative;
+    z-index: 20;
   }
 
   .lang-btn {
@@ -461,19 +463,38 @@ section:not(#header) .content {
   }
 
   .lang-menu {
-    position: absolute;
-    left: 0;
-    right: 0;
+    position: fixed;
+    inset: 0;
     width: 100%;
-    margin-top: 8px;
-    background: rgba(15, 7, 18, 0.95);
-    border: 1px solid rgba(98, 33, 151, 0.3);
+    height: 100vh;
+    margin: 0;
+    padding: 100px 20px 20px;
+    background: rgba(15, 7, 18, 0.98);
+    border: none;
+    border-radius: 0;
     box-shadow: none;
+    display: none;
+    z-index: 60;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .lang-menu a {
-    padding: 12px 18px;
-    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin: 10px 0;
+    padding: 16px 18px;
+    font-size: 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--description-color);
+    text-align: center;
   }
 }
 

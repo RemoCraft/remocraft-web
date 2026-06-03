@@ -318,7 +318,7 @@ function initializeNavbarFunctionality() {
             const isExpanded = langBtnNew.getAttribute('aria-expanded') === 'true';
             langBtnNew.setAttribute('aria-expanded', !isExpanded);
             langMenuNew.setAttribute('aria-hidden', isExpanded);
-            langMenuNew.style.display = isExpanded ? 'none' : 'block';
+            langMenuNew.style.display = isExpanded ? 'none' : 'flex';
         });
         
         // Close menu when clicking outside
