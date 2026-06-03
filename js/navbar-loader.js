@@ -178,8 +178,8 @@ function initializeNavbarFunctionality() {
             navbarLinks.classList.toggle('active');
         });
         
-        // Close menu when clicking on a link
-        const navItems = document.querySelectorAll('.navbar .link, .navbar .dropdown-link');
+        // Close menu when clicking on a destination link, but not on dropdown toggles
+        const navItems = document.querySelectorAll('.navbar .link:not(.dropdown-toggle), .navbar .dropdown-link:not(.dropdown-submenu > .dropdown-link)');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navbar.classList.remove('active');
@@ -200,6 +200,7 @@ function initializeNavbarFunctionality() {
             const isOpen = dropdown.classList.contains('open');
             if (!isOpen) {
                 e.preventDefault();
+                e.stopPropagation();
                 dropdown.classList.add('open');
             }
         });
