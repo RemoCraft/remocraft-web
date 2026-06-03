@@ -69,10 +69,10 @@ function initializeAccordions() {
 initializeAccordions();
 
 /*Config navbar*/
-const serverName = document.querySelector(".server-name");
-const serverLogo = document.querySelector(".logo-img");
+const navbarServerName = document.querySelector(".navbar .server-name");
+const serverLogo = document.querySelector(".navbar .logo-img");
 /*Config header*/
-const serverIp = document.querySelector(".minecraft-server-ip");
+const serverIp = document.querySelector("#header .minecraft-server-ip");
 const serverLogoHeader = document.querySelector(".logo-img-header");
 const discordOnlineUsers = document.querySelector(".discord-online-users");
 const minecraftOnlinePlayers = document.querySelector(".minecraft-online-players");
@@ -161,11 +161,11 @@ const copyIp = () => {
 
 const setDataFromConfigToHtml = async () => {
     /*Set config data to navbar*/
-    serverName.innerHTML = config.serverInfo.serverName;
-    serverLogo.src = getAssetPath(`images/${config.serverInfo.serverLogoImageFileName}`);
+    if (navbarServerName) navbarServerName.innerHTML = config.serverInfo.serverName;
+    if (serverLogo) serverLogo.src = getAssetPath(`images/${config.serverInfo.serverLogoImageFileName}`);
 
     /*Set config data to header*/
-    serverIp.innerHTML = config.serverInfo.serverIp;
+    if (serverIp) serverIp.innerHTML = config.serverInfo.serverIp;
 
     let locationPathname = location.pathname;
 
