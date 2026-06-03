@@ -272,6 +272,42 @@
     font-size: 0.75em;
     font-weight: 700;
     text-transform: uppercase;
+    display: inline-block;
+}
+
+.recipe-output.tier-f {
+    background: #052b40;
+    color: #ffffff;
+}
+
+.recipe-output.tier-e {
+    background: #677987;
+    color: #ffffff;
+}
+
+.recipe-output.tier-d {
+    background: #e1f5f4;
+    color: #000000;
+}
+
+.recipe-output.tier-c {
+    background: #77eeac;
+    color: #000000;
+}
+
+.recipe-output.tier-b {
+    background: #729bf5;
+    color: #ffffff;
+}
+
+.recipe-output.tier-a {
+    background: #cf6cea;
+    color: #000000;
+}
+
+.recipe-output.tier-s {
+    background: #ffdf52;
+    color: #000000;
 }
 
 .recipe-content {
