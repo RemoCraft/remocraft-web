@@ -244,11 +244,6 @@
     border-radius: 5px;
 }
 
-/*Footer*/
-#footer {
-    background: var(--stats-background);
-}
-
 /*Responsive*/
 /*Header*/
 @media screen and (max-width: 1625px) {

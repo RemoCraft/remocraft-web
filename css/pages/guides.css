@@ -549,16 +549,6 @@ body.js-active .recipe {
     box-shadow: 0 10px 30px rgba(116, 43, 175, 0.4);
 }
 
-/* Footer */
-#footer {
-    background: rgba(0, 0, 0, 0.4);
-    border-top: 2px solid rgba(116, 43, 175, 0.3);
-    padding: 50px 0 20px 0;
-}
-
-#footer .content {
-    padding: 0 100px;
-}
 
 .footer-content {
     display: grid;
