@@ -475,6 +475,7 @@ section:not(#header) .content {
     border-radius: 18px;
     box-shadow: none;
     display: none;
+    flex-direction: column;
     z-index: 60;
   }
 
@@ -522,6 +523,7 @@ section:not(#header) .content {
   border-radius: 18px;
   padding: 8px 0;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .lang-menu a {
@@ -648,6 +650,7 @@ section:not(#header) .content {
   min-width: 140px;
   z-index: 50;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  flex-direction: column;
 }
 .lang-menu a {
   display: block;
