@@ -66,6 +66,11 @@ async function loadNavbar() {
         // Reinitialize navbar functionality
         initializeNavbarFunctionality();
         
+        // Initialize navbar events from script.js
+        if (window.initializeNavbarEvents) {
+            window.initializeNavbarEvents();
+        }
+        
     } catch (error) {
         console.error('Error loading navbar:', error);
     }

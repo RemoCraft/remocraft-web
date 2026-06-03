@@ -34,29 +34,39 @@ const config = window.config;
 
 /*If you want everything to work as it should and you don't understand what is written here, don't touch it :D*/
 
+// Function to initialize navbar events - called by navbar-loader.js after injecting navbar
+window.initializeNavbarEvents = function() {
+    /*Mobile navbar (open, close)*/
+    const hamburger = document.querySelector(".hamburger");
+    const navbar = document.querySelector(".navbar");
+    const navbarLinks = document.querySelector(".links");
+    
+    if (hamburger && navbar && navbarLinks) {
+        hamburger.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+            navbarLinks.classList.toggle("active");
+        });
+    }
+}
 
-/*Mobile navbar (open, close)*/
-const navbar = document.querySelector(".navbar");
-const navbarLinks = document.querySelector(".links");
-const hamburger = document.querySelector(".hamburger");
+// Initialize FAQ accordions (these exist on rules page)
+function initializeAccordions() {
+    /*FAQs*/
+    const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
-hamburger.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-    navbarLinks.classList.toggle("active");
-})
+    accordionItemHeaders.forEach(accordionItemHeader => {
+        accordionItemHeader.addEventListener("click", () => {
+            accordionItemHeader.classList.toggle("active");
+            const accordionItemBody = accordionItemHeader.nextElementSibling;
 
-/*FAQs*/
-const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
-
-accordionItemHeaders.forEach(accordionItemHeader => {
-    accordionItemHeader.addEventListener("click", () => {
-        accordionItemHeader.classList.toggle("active");
-        const accordionItemBody = accordionItemHeader.nextElementSibling;
-
-        if(accordionItemHeader.classList.contains("active")) accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-        else accordionItemBody.style.maxHeight = "0px";
+            if(accordionItemHeader.classList.contains("active")) accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+            else accordionItemBody.style.maxHeight = "0px";
+        });
     });
-});
+}
+
+// Initialize accordions on page load
+initializeAccordions();
 
 /*Config navbar*/
 const serverName = document.querySelector(".server-name");
