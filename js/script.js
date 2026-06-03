@@ -80,7 +80,6 @@ const inputWithLocationAfterSubmit = document.querySelector(".location-after-sub
 const assetPrefix = (() => {
     const pathname = location.pathname;
     const segments = pathname.split('/').filter(Boolean);
-    if (segments.length <= 1) return '';
     const depth = pathname.endsWith('/') ? segments.length : Math.max(0, segments.length - 1);
     return '../'.repeat(depth);
 })();
