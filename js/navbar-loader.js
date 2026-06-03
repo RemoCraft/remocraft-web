@@ -20,6 +20,14 @@ const navbarTranslations = {
     }
 };
 
+const footerTranslations = {
+    es: {
+        'https://www.tiktok.com/@remocraftnetwork': 'https://www.tiktok.com/@remocraft_owner',
+        'https://www.instagram.com/remocraftnetwork/': 'https://www.instagram.com/remocraft_owner/',
+        'https://www.youtube.com/@remocraftnetwork': 'https://www.youtube.com/@remocraft_owner'
+    }
+};
+
 // Get current page info
 function normalizePath(path) {
     let normalized = path.replace(/\/index\.html$/, '').replace(/\/$/, '');
@@ -86,6 +94,28 @@ async function loadNavbar() {
     }
 }
 
+async function loadFooter() {
+    try {
+        const { currentLang } = getCurrentPageInfo();
+        const footerPath = getRelativeRootPath() + 'footer.html';
+        const response = await fetch(footerPath);
+        if (!response.ok) throw new Error('Failed to load footer');
+
+        let footerHTML = await response.text();
+        if (currentLang === 'es') {
+            footerHTML = translateFooter(footerHTML, 'es');
+        }
+
+        const footerContainer = document.createElement('div');
+        footerContainer.id = 'footer-container';
+        footerContainer.innerHTML = footerHTML;
+        const firstScript = document.body.querySelector('script');
+        document.body.insertBefore(footerContainer, firstScript || null);
+    } catch (error) {
+        console.error('Error loading footer:', error);
+    }
+}
+
 function translateNavbar(html, language) {
     if (!navbarTranslations[language]) return html;
     
@@ -100,6 +130,17 @@ function translateNavbar(html, language) {
         translatedHtml = translatedHtml.replace(regex, `> ${spanishText} <`);
     });
     
+    return translatedHtml;
+}
+
+function translateFooter(html, language) {
+    if (!footerTranslations[language]) return html;
+    
+    let translatedHtml = html;
+    const translations = footerTranslations[language];
+    Object.keys(translations).forEach(englishUrl => {
+        translatedHtml = translatedHtml.replaceAll(englishUrl, translations[englishUrl]);
+    });
     return translatedHtml;
 }
 
@@ -245,9 +286,13 @@ function initializeNavbarFunctionality() {
     }
 }
 
-// Load navbar when DOM is ready
+// Load navbar and footer when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadNavbar);
+    document.addEventListener('DOMContentLoaded', () => {
+        loadNavbar();
+        loadFooter();
+    });
 } else {
     loadNavbar();
+    loadFooter();
 }
