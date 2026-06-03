@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Guías | RemoCraft</title>
+    <link rel="icon" href="../images/logo.png">
+    <meta name="description" content="Guías completas para los sistemas del servidor RemoCraft incluyendo recetas custom, guías de crafteo y explicaciones de sistemas.">
+    <meta name="author" content="RemoCraft Network">
+    <link rel="canonical" href="https://www.remocraft.com/es/guides.html">
+    <link rel="alternate" hreflang="es" href="https://www.remocraft.com/es/guides.html">
+    <link rel="alternate" hreflang="en" href="https://www.remocraft.com/guides.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.remocraft.com/es/guides.html">
+    <meta property="og:title" content="Guías RemoCraft - Crafteos y Sistemas">
+    <meta property="og:description" content="Aprende cómo craftear items custom y domina los sistemas únicos de RemoCraft.">
+    <meta property="og:image" content="../images/logo.png"> 
+    <meta name="theme-color" content="#622197">
+
+    <link rel="preconnect" href="https://discord.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="../images/header-background.webp">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/pages/guides.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!--Navbar-->
+    <div class="navbar">
+        <div class="menu-mobile">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="RemoCraft Logo" class="logo-img" width="1024" height="1024" decoding="async">
+                    <h3 class="server-name">RemoCraft</h3>
+                </div>
+            </a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="index.html" class="link">Inicio</a>
+            <a href="rules.html" class="link">Reglas</a>
+            <a href="team.html" class="link">Equipo</a>
+            <a href="announcements.html" class="link">Anuncios</a>
+            <a href="guides.html" class="link active">Guías</a>
+            <a href="contact.html" class="link">Contacto</a>
+            <a href="https://shop.remocraft.com" class="link">Tienda</a>
+
+            <!-- Language selector -->
+            <div class="lang-switcher">
+                <button class="lang-btn" aria-expanded="false"><span class="lang-flag es" aria-hidden="true"></span> <span class="lang-text">ES</span> ▾</button>
+                <div class="lang-menu" aria-hidden="true">
+                    <a href="guides.html" class="lang-link active">ES <span class="lang-flag es" aria-hidden="true"></span></a>
+                    <a href="../guides.html" class="lang-link">EN <span class="lang-flag en" aria-hidden="true"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Header-->
+    <section id="header">
+        <div class="content">
+            <div class="left">
+                <div class="server-name">
+                    <p>Crafteos y Sistemas</p>
+                    <h1>Domina las Recetas</h1>
+                </div>
+                <p class="server-description">
+                    Descubre todos los crafteos custom y sistemas disponibles en RemoCraft. 
+                    Aprende cómo combinar items y crear equipo poderoso.
+                </p>
+            </div>
+
+            <div class="right">
+                <img src="../images/logo.png" alt="RemoCraft Logo" class="logo-img logo-img-header" width="1024" height="1024" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <!--Guides Content-->
+    <section id="guides-content">
+        <div class="content">
+            <!-- Solid XP Guide -->
+            <div class="guide-section">
+                <h2 class="section-title">Sistema de Experiencia Sólida</h2>
+                
+                <!-- Color Legend -->
+                <div class="xp-system-legend">
+                    <h3 class="legend-title">📚 Leyenda del Sistema de Colores</h3>
+                    <p class="legend-description">Comprende el código de colores utilizado en las recetas de crafteo:</p>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <span class="color-badge blue">🔵</span>
+                            <div>
+                                <strong>Azul:</strong> Ingrediente principal o componente mayoritario
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-badge red">🔴</span>
+                            <div>
+                                <strong>Rojo:</strong> Ingrediente secundario
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-badge green">🟢</span>
+                            <div>
+                                <strong>Verde:</strong> Tercer ingrediente (si aplica) o Resultado final del crafteo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipes Container -->
+                <div class="recipes-container">
+                    <!-- Image Section -->
+                    <div class="recipe-images">
+                        <div class="recipe-tier" id="tier-f">
+                            <img src="../images/crafts/craft_solid_xp_f.png" alt="Receta Experiencia Sólida Tier F" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier F</p>
+                        </div>
+                        <div class="recipe-tier" id="tier-e">
+                            <img src="../images/crafts/craft_solid_xp_e.png" alt="Receta Experiencia Sólida Tier E" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier E</p>
+                        </div>
+                        <div class="recipe-tier" id="tier-d">
+                            <img src="../images/crafts/craft_solid_xp_d.png" alt="Receta Experiencia Sólida Tier D" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier D</p>
+                        </div>
+                        <div class="recipe-tier" id="tier-c">
+                            <img src="../images/crafts/craft_solid_xp_c.png" alt="Receta Experiencia Sólida Tier C" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier C</p>
+                        </div>
+                        <div class="recipe-tier" id="tier-b">
+                            <img src="../images/crafts/craft_solid_xp_b.png" alt="Receta Experiencia Sólida Tier B" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier B</p>
+                        </div>
+                        <div class="recipe-tier" id="tier-a">
+                            <img src="../images/crafts/craft_solid_xp_a.png" alt="Receta Experiencia Sólida Tier A" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier A</p>
+                        </div>
+                        <div class="recipe-tier" id="tier-s">
+                            <img src="../images/crafts/craft_solid_xp_s.png" alt="Receta Experiencia Sólida Tier S" loading="lazy" decoding="async">
+                            <p class="tier-label">Tier S</p>
+                        </div>
+                    </div>
+
+                    <!-- Recipes Description -->
+                    <div class="recipes-description">
+                        <h3 class="recipes-title">Recetas de Crafteo</h3>
+                        
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier F</h4>
+                                <span class="recipe-output">Tier F</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 8 Botellitas de experiencia 
+                                <br>+ 🔴 1 Cristal 
+                                <br>➜ 🟢 <strong>8 Experiencia Sólida Tier F</strong>
+                            </p>
+                        </div>
+
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier E</h4>
+                                <span class="recipe-output">Tier E</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 5 Experiencia Sólida Tier F 
+                                <br>+ 🔴 4 Botellitas de experiencia 
+                                <br>➜ 🟢 <strong>4 Experiencia Sólida Tier E</strong>
+                            </p>
+                        </div>
+
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier D</h4>
+                                <span class="recipe-output">Tier D</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 5 Experiencia Sólida Tier E 
+                                <br>+ 🔴 4 Experiencia Sólida Tier F 
+                                <br>➜ 🟢 <strong>1 Experiencia Sólida Tier D</strong>
+                            </p>
+                        </div>
+
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier C</h4>
+                                <span class="recipe-output">Tier C</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 4 Experiencia Sólida Tier D 
+                                <br>+ 🔴 3 Experiencia Sólida Tier E 
+                                <br>+ 🟢 2 Experiencia Sólida Tier F 
+                                <br>➜ 🟢 <strong>1 Experiencia Sólida Tier C</strong>
+                            </p>
+                        </div>
+
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier B</h4>
+                                <span class="recipe-output">Tier B</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 4 Experiencia Sólida Tier C 
+                                <br>+ 🔴 2 Experiencia Sólida Tier D 
+                                <br>+ 🟢 3 Experiencia Sólida Tier F 
+                                <br>➜ 🟢 <strong>1 Experiencia Sólida Tier B</strong>
+                            </p>
+                        </div>
+
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier A</h4>
+                                <span class="recipe-output">Tier A</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 3 Experiencia Sólida Tier B 
+                                <br>+ 🔴 3 Experiencia Sólida Tier C 
+                                <br>+ 🟢 3 Experiencia Sólida Tier D 
+                                <br>➜ 🟢 <strong>1 Experiencia Sólida Tier A</strong>
+                            </p>
+                        </div>
+
+                        <div class="recipe">
+                            <div class="recipe-header">
+                                <h4>Tier S</h4>
+                                <span class="recipe-output">Tier S</span>
+                            </div>
+                            <p class="recipe-content">
+                                🔵 5 Experiencia Sólida Tier A 
+                                <br>+ 🔴 3 Experiencia Sólida Tier B 
+                                <br>+ 🟢 1 Experiencia Sólida Tier D 
+                                <br>➜ 🟢 <strong>1 Experiencia Sólida Tier S</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Discord-->
+    <section id="discord">
+        <div class="content">
+            <h2 class="section-title">¿Necesitas ayuda o tienes dudas?<br>¡Únete a nuestro <span>Discord!</span></h2>
+            <a href="https://discord.gg/BNHeKg7u2U" class="discord-link" target="_blank" rel="noopener noreferrer"><button class="join-discord">Unirse a Discord</button></a>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer id="footer">
+        <div class="content">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>RemoCraft</h4>
+                    <p>Una experiencia única de Minecraft Survival RPG.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="rules.html">Reglas</a>
+                    <a href="announcements.html">Anuncios</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Comunidad</h4>
+                    <a href="https://discord.gg/BNHeKg7u2U" target="_blank" rel="noopener noreferrer">Discord</a>
+                    <a href="https://www.youtube.com/@RemoCraftNetwork" target="_blank" rel="noopener noreferrer">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RemoCraft Network. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
