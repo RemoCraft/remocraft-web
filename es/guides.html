@@ -84,31 +84,31 @@
                 <div class="recipes-container">
                     <!-- Image Section -->
                     <div class="recipe-images">
-                        <div class="recipe-tier" id="tier-f">
+                        <div class="recipe-tier active" id="tier-f" data-tier="tier-f" tabindex="0">
                             <img src="../images/crafts/craft_solid_xp_f.png" alt="Receta Experiencia Sólida Tier F" loading="lazy" decoding="async">
                             <p class="tier-label">Tier F</p>
                         </div>
-                        <div class="recipe-tier" id="tier-e">
+                        <div class="recipe-tier" id="tier-e" data-tier="tier-e">
                             <img src="../images/crafts/craft_solid_xp_e.png" alt="Receta Experiencia Sólida Tier E" loading="lazy" decoding="async">
                             <p class="tier-label">Tier E</p>
                         </div>
-                        <div class="recipe-tier" id="tier-d">
+                        <div class="recipe-tier" id="tier-d" data-tier="tier-d">
                             <img src="../images/crafts/craft_solid_xp_d.png" alt="Receta Experiencia Sólida Tier D" loading="lazy" decoding="async">
                             <p class="tier-label">Tier D</p>
                         </div>
-                        <div class="recipe-tier" id="tier-c">
+                        <div class="recipe-tier" id="tier-c" data-tier="tier-c">
                             <img src="../images/crafts/craft_solid_xp_c.png" alt="Receta Experiencia Sólida Tier C" loading="lazy" decoding="async">
                             <p class="tier-label">Tier C</p>
                         </div>
-                        <div class="recipe-tier" id="tier-b">
+                        <div class="recipe-tier" id="tier-b" data-tier="tier-b">
                             <img src="../images/crafts/craft_solid_xp_b.png" alt="Receta Experiencia Sólida Tier B" loading="lazy" decoding="async">
                             <p class="tier-label">Tier B</p>
                         </div>
-                        <div class="recipe-tier" id="tier-a">
+                        <div class="recipe-tier" id="tier-a" data-tier="tier-a">
                             <img src="../images/crafts/craft_solid_xp_a.png" alt="Receta Experiencia Sólida Tier A" loading="lazy" decoding="async">
                             <p class="tier-label">Tier A</p>
                         </div>
-                        <div class="recipe-tier" id="tier-s">
+                        <div class="recipe-tier" id="tier-s" data-tier="tier-s">
                             <img src="../images/crafts/craft_solid_xp_s.png" alt="Receta Experiencia Sólida Tier S" loading="lazy" decoding="async">
                             <p class="tier-label">Tier S</p>
                         </div>
@@ -117,11 +117,26 @@
                     <!-- Recipes Description -->
                     <div class="recipes-description">
                         <h3 class="recipes-title">Recetas de Crafteo</h3>
-                        
-                        <div class="recipe">
+                        <div class="recipe-preview" aria-live="polite">
+                            <div class="recipe-preview-image">
+                                <img src="../images/crafts/craft_solid_xp_f.png" alt="Receta seleccionada de Experiencia Sólida - Tier F" loading="lazy" decoding="async">
+                            </div>
+                            <div class="recipe-preview-info">
+                                <div class="recipe-preview-header">
+                                    <h4 class="preview-title">Tier F</h4>
+                                    <span class="recipe-output tier-f preview-badge">Tier F</span>
+                                </div>
+                                <p class="preview-text">
+                                    🔵 8x Botellitas de experiencia
+                                    <br>+ 🔴 1x Cristal
+                                    <br>🛠️ <strong>Resultado: 8x Experiencia Sólida (Tier F)</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="recipe" data-tier="tier-f">
                             <div class="recipe-header">
                                 <h4>Tier F</h4>
-                                <span class="recipe-output tier-f">Tier F</span>
+                                <span class="recipe-output">Tier F</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 8x Botellitas de experiencia
@@ -130,10 +145,10 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-e">
                             <div class="recipe-header">
                                 <h4>Tier E</h4>
-                                <span class="recipe-output tier-e">Tier E</span>
+                                <span class="recipe-output">Tier E</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 5x Experiencia Sólida (Tier F)
@@ -142,10 +157,10 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-d">
                             <div class="recipe-header">
                                 <h4>Tier D</h4>
-                                <span class="recipe-output tier-d">Tier D</span>
+                                <span class="recipe-output">Tier D</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 5x Experiencia Sólida (Tier E)
@@ -154,10 +169,10 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-c">
                             <div class="recipe-header">
                                 <h4>Tier C</h4>
-                                <span class="recipe-output tier-c">Tier C</span>
+                                <span class="recipe-output">Tier C</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 4x Experiencia Sólida (Tier D)
@@ -167,10 +182,10 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-b">
                             <div class="recipe-header">
                                 <h4>Tier B</h4>
-                                <span class="recipe-output tier-b">Tier B</span>
+                                <span class="recipe-output">Tier B</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 4x Experiencia Sólida (Tier C)
@@ -180,10 +195,10 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-a">
                             <div class="recipe-header">
                                 <h4>Tier A</h4>
-                                <span class="recipe-output tier-a">Tier A</span>
+                                <span class="recipe-output">Tier A</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 3x Experiencia Sólida (Tier B)
@@ -193,10 +208,10 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-s">
                             <div class="recipe-header">
                                 <h4>Tier S</h4>
-                                <span class="recipe-output tier-s">Tier S</span>
+                                <span class="recipe-output">Tier S</span>
                             </div>
                             <p class="recipe-content">
                                 🔵 5x Experiencia Sólida (Tier A)
@@ -245,6 +260,7 @@
         </div>
     </footer>
 
+    <script src="../js/guides.js" defer></script>
     <script src="../js/script.js"></script>
 </body>
 </html>

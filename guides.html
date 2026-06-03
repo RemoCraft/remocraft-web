@@ -84,31 +84,31 @@
                 <div class="recipes-container">
                     <!-- Image Section -->
                     <div class="recipe-images">
-                        <div class="recipe-tier" id="tier-f">
+                        <div class="recipe-tier active" id="tier-f" data-tier="tier-f" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_f.png" alt="Solid XP Tier F Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier F</p>
                         </div>
-                        <div class="recipe-tier" id="tier-e">
+                        <div class="recipe-tier" id="tier-e" data-tier="tier-e" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_e.png" alt="Solid XP Tier E Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier E</p>
                         </div>
-                        <div class="recipe-tier" id="tier-d">
+                        <div class="recipe-tier" id="tier-d" data-tier="tier-d" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_d.png" alt="Solid XP Tier D Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier D</p>
                         </div>
-                        <div class="recipe-tier" id="tier-c">
+                        <div class="recipe-tier" id="tier-c" data-tier="tier-c" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_c.png" alt="Solid XP Tier C Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier C</p>
                         </div>
-                        <div class="recipe-tier" id="tier-b">
+                        <div class="recipe-tier" id="tier-b" data-tier="tier-b" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_b.png" alt="Solid XP Tier B Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier B</p>
                         </div>
-                        <div class="recipe-tier" id="tier-a">
+                        <div class="recipe-tier" id="tier-a" data-tier="tier-a" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_a.png" alt="Solid XP Tier A Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier A</p>
                         </div>
-                        <div class="recipe-tier" id="tier-s">
+                        <div class="recipe-tier" id="tier-s" data-tier="tier-s" tabindex="0">
                             <img src="images/crafts/craft_solid_xp_s.png" alt="Solid XP Tier S Recipe" loading="lazy" decoding="async">
                             <p class="tier-label">Tier S</p>
                         </div>
@@ -117,8 +117,23 @@
                     <!-- Recipes Description -->
                     <div class="recipes-description">
                         <h3 class="recipes-title">Crafting Recipes</h3>
-                        
-                        <div class="recipe">
+                        <div class="recipe-preview" aria-live="polite">
+                            <div class="recipe-preview-image">
+                                <img src="images/crafts/craft_solid_xp_f.png" alt="Selected Solid XP recipe - Tier F" loading="lazy" decoding="async">
+                            </div>
+                            <div class="recipe-preview-info">
+                                <div class="recipe-preview-header">
+                                    <h4 class="preview-title">Tier F</h4>
+                                    <span class="recipe-output tier-f preview-badge">Tier F</span>
+                                </div>
+                                <p class="preview-text">
+                                    🔵 8x Experience Bottles
+                                    <br>+ 🔴 1x Glass
+                                    <br>🛠️ <strong>Result: 8x Solid XP (Tier F)</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="recipe" data-tier="tier-f">
                             <div class="recipe-header">
                                 <h4>Tier F</h4>
                                 <span class="recipe-output tier-f">Tier F</span>
@@ -130,7 +145,7 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-e">
                             <div class="recipe-header">
                                 <h4>Tier E</h4>
                                 <span class="recipe-output tier-e">Tier E</span>
@@ -142,7 +157,7 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-d">
                             <div class="recipe-header">
                                 <h4>Tier D</h4>
                                 <span class="recipe-output tier-d">Tier D</span>
@@ -154,7 +169,7 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-c">
                             <div class="recipe-header">
                                 <h4>Tier C</h4>
                                 <span class="recipe-output tier-c">Tier C</span>
@@ -167,7 +182,7 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-b">
                             <div class="recipe-header">
                                 <h4>Tier B</h4>
                                 <span class="recipe-output tier-b">Tier B</span>
@@ -180,7 +195,7 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-a">
                             <div class="recipe-header">
                                 <h4>Tier A</h4>
                                 <span class="recipe-output tier-a">Tier A</span>
@@ -193,7 +208,7 @@
                             </p>
                         </div>
 
-                        <div class="recipe">
+                        <div class="recipe" data-tier="tier-s">
                             <div class="recipe-header">
                                 <h4>Tier S</h4>
                                 <span class="recipe-output tier-s">Tier S</span>
@@ -245,6 +260,7 @@
         </div>
     </footer>
 
+    <script src="js/guides.js" defer></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -247,13 +247,97 @@
     box-shadow: 0 5px 20px rgba(116, 43, 175, 0.2);
 }
 
-.recipe-header {
+body.js-active .recipe {
+    display: none;
+}
+
+.recipe-preview {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(116, 43, 175, 0.18);
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.recipe-preview-image {
+    min-width: 240px;
+    align-self: center;
+}
+
+.recipe-preview-image img {
+    width: 100%;
+    border-radius: 14px;
+    object-fit: contain;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.recipe-preview-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.recipe-preview-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(116, 43, 175, 0.3);
+    gap: 12px;
+}
+
+.recipe-preview-header .preview-title {
+    color: var(--main-color);
+    font-size: 1.35em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.preview-badge {
+    font-size: 0.8em;
+}
+
+.preview-text {
+    color: var(--white-color);
+    font-size: 1em;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.recipe-tier {
+    cursor: pointer;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.recipe-tier.active {
+    transform: translateY(-4px);
+    border-color: var(--main-color);
+    background: rgba(116, 43, 175, 0.2);
+    box-shadow: 0 20px 45px rgba(116, 43, 175, 0.14);
+}
+
+.recipe-tier:hover {
+    transform: translateY(-2px);
+}
+
+.recipe-tier img {
+    transition: transform 0.25s ease;
+}
+
+.recipe-tier.active img,
+.recipe-tier:hover img {
+    transform: scale(1.03);
+}
+
+.recipe-content {
+    color: var(--white-color);
+    font-size: 0.95em;
+    line-height: 1.8;
+    margin: 0;
+    letter-spacing: 0.3px;
 }
 
 .recipe-header h4 {
@@ -502,6 +586,10 @@
 
     .recipes-description .recipes-title {
         font-size: 1.4em;
+    }
+
+    .recipe-preview {
+        grid-template-columns: 1fr;
     }
 
     #discord .section-title {
