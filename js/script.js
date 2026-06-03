@@ -68,9 +68,6 @@ function initializeAccordions() {
 // Initialize accordions on page load
 initializeAccordions();
 
-/*Config navbar*/
-const navbarServerName = document.querySelector(".navbar .server-name");
-const serverLogo = document.querySelector(".navbar .logo-img");
 /*Config header*/
 const serverIp = document.querySelector("#header .minecraft-server-ip");
 const serverLogoHeader = document.querySelector(".logo-img-header");
@@ -161,6 +158,8 @@ const copyIp = () => {
 
 const setDataFromConfigToHtml = async () => {
     /*Set config data to navbar*/
+    const navbarServerName = document.querySelector(".navbar .server-name");
+    const serverLogo = document.querySelector(".navbar .logo-img");
     if (navbarServerName) navbarServerName.innerHTML = config.serverInfo.serverName;
     if (serverLogo) serverLogo.src = getAssetPath(`images/${config.serverInfo.serverLogoImageFileName}`);
 
@@ -188,7 +187,11 @@ const setDataFromConfigToHtml = async () => {
     }
 }
 
-setDataFromConfigToHtml();
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setDataFromConfigToHtml);
+} else {
+    setDataFromConfigToHtml();
+}
 
 /* Language selector toggle (accessible) */
 

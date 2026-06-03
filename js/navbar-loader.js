@@ -81,12 +81,6 @@ async function loadNavbar() {
         
         // Reinitialize navbar functionality
         initializeNavbarFunctionality();
-        
-        // Initialize navbar events from script.js
-        if (window.initializeNavbarEvents) {
-            window.initializeNavbarEvents();
-        }
-        
     } catch (error) {
         console.error('Error loading navbar:', error);
     }
@@ -193,6 +187,31 @@ function initializeNavbarFunctionality() {
             });
         });
     }
+
+    // Mobile dropdown open/close behavior for touch devices
+    const dropdownToggles = document.querySelectorAll('.navbar .nav-dropdown > .dropdown-toggle, .navbar .dropdown-submenu > .dropdown-link');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth > 867) return;
+
+            const dropdown = toggle.closest('.nav-dropdown, .dropdown-submenu');
+            if (!dropdown) return;
+
+            const isOpen = dropdown.classList.contains('open');
+            if (!isOpen) {
+                e.preventDefault();
+                dropdown.classList.add('open');
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown') && !e.target.closest('.dropdown-submenu') && !e.target.closest('.lang-switcher')) {
+            document.querySelectorAll('.navbar .nav-dropdown.open, .navbar .dropdown-submenu.open').forEach(openDropdown => {
+                openDropdown.classList.remove('open');
+            });
+        }
+    });
     
     // Language switcher menu
     const langBtn = document.querySelector('.lang-btn');
