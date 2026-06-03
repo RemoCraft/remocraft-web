@@ -22,6 +22,14 @@
     width: 100%;
 }
 
+#header.bedwars-header {
+    background-image: url("../../images/bedwars-minigames-image.webp");
+}
+
+#header.survival-header {
+    background-image: url("../../images/survival-minigames-image.webp");
+}
+
 #header .content .info {
     display: flex;
     flex-direction: column;
