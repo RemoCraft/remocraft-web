@@ -1,20 +1,35 @@
 /**
  * Dynamic Navbar Loader
  * Loads navbar from navbar.html and automatically marks the current page as active
- * This eliminates the need to update navbar in every single HTML file
+ * Handles asset paths, language switching, and mobile menu
  */
+
+// Get current page info
+function getCurrentPageInfo() {
+    const pathname = window.location.pathname;
+    const isSubdirectory = pathname.includes('/es/');
+    const currentPage = pathname.split('/').pop() || 'index.html';
+    const currentLang = isSubdirectory ? 'es' : 'en';
+    
+    return { isSubdirectory, currentPage, currentLang };
+}
 
 async function loadNavbar() {
     try {
-        // Determine if we're in a subdirectory (es/)
-        const isSubdirectory = window.location.pathname.includes('/es/');
+        const { isSubdirectory } = getCurrentPageInfo();
         const navbarPath = isSubdirectory ? '../navbar.html' : 'navbar.html';
         
         // Fetch the navbar HTML
         const response = await fetch(navbarPath);
         if (!response.ok) throw new Error('Failed to load navbar');
         
-        const navbarHTML = await response.text();
+        let navbarHTML = await response.text();
+        
+        // Fix asset paths if in subdirectory
+        if (isSubdirectory) {
+            // Replace image paths for Spanish pages
+            navbarHTML = navbarHTML.replace(/src="images\//g, 'src="../images/');
+        }
         
         // Insert navbar at the top of body
         const navbarContainer = document.createElement('div');
@@ -25,7 +40,10 @@ async function loadNavbar() {
         // Mark current page as active
         markCurrentPage();
         
-        // Reinitialize navbar functionality (hamburger menu)
+        // Fix language switcher links
+        fixLanguageSwitcherLinks();
+        
+        // Reinitialize navbar functionality
         initializeNavbarFunctionality();
         
     } catch (error) {
@@ -34,17 +52,13 @@ async function loadNavbar() {
 }
 
 function markCurrentPage() {
-    // Get current page filename
-    let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const { currentPage, currentLang } = getCurrentPageInfo();
     
-    // Get all navbar links
+    // Mark active page in navigation
     const navLinks = document.querySelectorAll('.navbar .link');
-    
     navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        
-        // Remove all active classes first
         link.classList.remove('active');
+        const href = link.getAttribute('href');
         
         // Check if this link matches current page
         if (href === currentPage || 
@@ -53,57 +67,112 @@ function markCurrentPage() {
             link.classList.add('active');
         }
     });
-    
-    // Also handle language-specific pages
-    const currentLang = window.location.pathname.includes('/es/') ? 'es' : 'en';
+}
+
+function fixLanguageSwitcherLinks() {
+    const { isSubdirectory, currentPage } = getCurrentPageInfo();
     const langLinks = document.querySelectorAll('.lang-link');
+    const langBtn = document.querySelector('.lang-btn');
     
     langLinks.forEach(link => {
         link.classList.remove('active');
-        const href = link.getAttribute('href');
+        const lang = link.getAttribute('data-lang');
         
-        // Check if language matches
-        if ((currentLang === 'es' && href.includes('../')) || 
-            (currentLang === 'es' && !href.includes('../'))) {
-            link.classList.add('active');
-        } else if ((currentLang === 'en' && !href.includes('../')) || 
-                   (currentLang === 'en' && href.includes('../'))) {
-            link.classList.add('active');
+        if (lang === 'en') {
+            // English link
+            if (!isSubdirectory) {
+                // Already on EN page - mark as active
+                link.classList.add('active');
+                link.setAttribute('href', currentPage);
+            } else {
+                // On ES page - point to EN version
+                link.setAttribute('href', '../' + currentPage);
+            }
+        } else if (lang === 'es') {
+            // Spanish link
+            if (isSubdirectory) {
+                // Already on ES page - mark as active
+                link.classList.add('active');
+                link.setAttribute('href', currentPage);
+            } else {
+                // On EN page - point to ES version
+                link.setAttribute('href', 'es/' + currentPage);
+            }
         }
     });
+    
+    // Update language button text
+    if (langBtn) {
+        const langText = langBtn.querySelector('.lang-text');
+        const langFlag = langBtn.querySelector('.lang-flag');
+        if (langText && langFlag) {
+            if (isSubdirectory) {
+                langText.textContent = 'ES';
+                langFlag.classList.remove('en');
+                langFlag.classList.add('es');
+            } else {
+                langText.textContent = 'EN';
+                langFlag.classList.remove('es');
+                langFlag.classList.add('en');
+            }
+        }
+    }
 }
 
 function initializeNavbarFunctionality() {
-    // Mobile navbar functionality
     const navbar = document.querySelector('.navbar');
     const navbarLinks = document.querySelector('.links');
     const hamburger = document.querySelector('.hamburger');
     
+    // Mobile hamburger menu
     if (hamburger && navbar && navbarLinks) {
-        hamburger.addEventListener('click', () => {
+        // Remove previous event listeners by cloning
+        const newHamburger = hamburger.cloneNode(true);
+        hamburger.parentNode.replaceChild(newHamburger, hamburger);
+        
+        const hamburgerNew = document.querySelector('.hamburger');
+        hamburgerNew.addEventListener('click', (e) => {
+            e.stopPropagation();
             navbar.classList.toggle('active');
             navbarLinks.classList.toggle('active');
         });
+        
+        // Close menu when clicking on a link
+        const navItems = document.querySelectorAll('.navbar .link');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                navbarLinks.classList.remove('active');
+            });
+        });
     }
     
-    // Language switcher functionality
+    // Language switcher menu
     const langBtn = document.querySelector('.lang-btn');
     const langMenu = document.querySelector('.lang-menu');
     
     if (langBtn && langMenu) {
-        langBtn.addEventListener('click', () => {
-            const isExpanded = langBtn.getAttribute('aria-expanded') === 'true';
-            langBtn.setAttribute('aria-expanded', !isExpanded);
-            langMenu.setAttribute('aria-hidden', isExpanded);
-            langMenu.style.display = isExpanded ? 'none' : 'block';
+        // Remove previous event listeners
+        const newLangBtn = langBtn.cloneNode(true);
+        langBtn.parentNode.replaceChild(newLangBtn, langBtn);
+        
+        const langBtnNew = document.querySelector('.lang-btn');
+        const langMenuNew = document.querySelector('.lang-menu');
+        
+        langBtnNew.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isExpanded = langBtnNew.getAttribute('aria-expanded') === 'true';
+            langBtnNew.setAttribute('aria-expanded', !isExpanded);
+            langMenuNew.setAttribute('aria-hidden', isExpanded);
+            langMenuNew.style.display = isExpanded ? 'none' : 'block';
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.lang-switcher')) {
-                langBtn.setAttribute('aria-expanded', 'false');
-                langMenu.setAttribute('aria-hidden', 'true');
-                langMenu.style.display = 'none';
+                langBtnNew.setAttribute('aria-expanded', 'false');
+                langMenuNew.setAttribute('aria-hidden', 'true');
+                langMenuNew.style.display = 'none';
             }
         });
     }
