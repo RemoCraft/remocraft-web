@@ -166,21 +166,40 @@ const setDataFromConfigToHtml = async () => {
     /*Set config data to header*/
     if (serverIp) serverIp.innerHTML = config.serverInfo.serverIp;
 
-    let locationPathname = location.pathname;
+    const locationPathname = location.pathname;
+    const isHomePage = locationPathname === "/" || locationPathname === "/es/" || locationPathname.includes("index");
 
-    if(locationPathname == "/" || locationPathname.includes("index")) {
-        copyIp();
-        /*Set config data to header*/
+    if (serverLogoHeader) {
         serverLogoHeader.src = getAssetPath(`images/${config.serverInfo.serverLogoImageFileName}`);
-        discordOnlineUsers.innerHTML = await getDiscordOnlineUsers();
-        minecraftOnlinePlayers.innerHTML = await getMinecraftOnlinePlayer();
-    } else if(locationPathname.includes("rules")) {
+    }
+
+    if (discordOnlineUsers) {
+        discordOnlineUsers.innerHTML = "...";
+    }
+    if (minecraftOnlinePlayers) {
+        minecraftOnlinePlayers.innerHTML = "...";
+    }
+
+    if (isHomePage) {
         copyIp();
-    } else if(locationPathname.includes("contact")) {
+        if (serverLogoHeader) {
+            serverLogoHeader.src = getAssetPath(`images/${config.serverInfo.serverLogoImageFileName}`);
+        }
+        if (discordOnlineUsers) {
+            discordOnlineUsers.innerHTML = await getDiscordOnlineUsers();
+        }
+        if (minecraftOnlinePlayers) {
+            minecraftOnlinePlayers.innerHTML = await getMinecraftOnlinePlayer();
+        }
+    } else if (locationPathname.includes("rules")) {
+        copyIp();
+    } else if (locationPathname.includes("contact")) {
         if (contactForm) {
             contactForm.action = `https://formsubmit.co/${config.contactPage.email}`;
         }
-        discordOnlineUsers.innerHTML = await getDiscordOnlineUsers();
+        if (discordOnlineUsers) {
+            discordOnlineUsers.innerHTML = await getDiscordOnlineUsers();
+        }
         if (inputWithLocationAfterSubmit) {
             inputWithLocationAfterSubmit.value = location.href;
         }
