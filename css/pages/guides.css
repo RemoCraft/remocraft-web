@@ -179,7 +179,7 @@
 
 .legend-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 15px;
     background: rgba(255, 255, 255, 0.03);
     padding: 16px;
