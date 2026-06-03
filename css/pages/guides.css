@@ -253,7 +253,7 @@ body.js-active .recipe {
 
 .recipe-preview {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1fr;
     gap: 25px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(116, 43, 175, 0.18);
@@ -263,8 +263,7 @@ body.js-active .recipe {
 }
 
 .recipe-preview-image {
-    min-width: 240px;
-    align-self: center;
+    width: 100%;
 }
 
 .recipe-preview-image img {
@@ -277,7 +276,7 @@ body.js-active .recipe {
 .recipe-preview-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
 }
 
@@ -305,6 +304,33 @@ body.js-active .recipe {
     font-size: 1em;
     line-height: 1.8;
     margin: 0;
+}
+
+.recipe-bullet-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.recipe-bullet-list li {
+    padding-left: 1.4em;
+    position: relative;
+    margin-bottom: 0.65em;
+    line-height: 1.7;
+}
+
+.recipe-bullet-list li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: var(--white-color);
+}
+
+.recipe-result {
+    margin: 1em 0 0;
+    color: var(--green-color);
+    font-weight: 700;
+    line-height: 1.6;
 }
 
 .recipe-tier {

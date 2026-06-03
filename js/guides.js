@@ -11,6 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    function formatPreviewContent(contentHtml) {
+        const lines = contentHtml
+            .split(/<br\s*\/?>/i)
+            .map(line => line.trim())
+            .filter(line => line.length > 0);
+
+        const ingredients = [];
+        let resultLine = null;
+
+        lines.forEach(line => {
+            if (line.startsWith('🛠️') || line.startsWith('🛠')) {
+                resultLine = line;
+            } else {
+                ingredients.push(line.replace(/^\+?\s*/g, ''));
+            }
+        });
+
+        let result = '';
+        if (ingredients.length) {
+            result += '<ul class="recipe-bullet-list">';
+            ingredients.forEach(item => {
+                result += `<li>${item}</li>`;
+            });
+            result += '</ul>';
+        }
+        if (resultLine) {
+            result += `<p class="recipe-result">${resultLine}</p>`;
+        }
+        return result;
+    }
+
     function updatePreview(tierId) {
         const selectedTier = tiers.find(t => t.dataset.tier === tierId) || tiers[0];
         const recipe = recipes.find(r => r.dataset.tier === tierId) || recipes[0];
@@ -33,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         previewTitle.textContent = titleText;
         previewBadge.textContent = badgeText;
         previewBadge.className = `recipe-output preview-badge ${badgeClass}`;
-        previewText.innerHTML = contentHtml;
+        previewText.innerHTML = formatPreviewContent(contentHtml);
     }
 
     document.body.classList.add('js-active');
