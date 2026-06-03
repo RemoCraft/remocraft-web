@@ -4,6 +4,21 @@
  * Handles asset paths, language switching, and mobile menu
  */
 
+// Translation dictionary for navbar
+const navbarTranslations = {
+    es: {
+        'Home': 'Inicio',
+        'Rules': 'Reglas',
+        'Team': 'Equipo',
+        'Announcements': 'Anuncios',
+        'Guides': 'Guías',
+        'Contact': 'Contacto',
+        'Shop': 'Tienda',
+        'EN': 'EN',
+        'ES': 'ES'
+    }
+};
+
 // Get current page info
 function getCurrentPageInfo() {
     const pathname = window.location.pathname;
@@ -16,7 +31,7 @@ function getCurrentPageInfo() {
 
 async function loadNavbar() {
     try {
-        const { isSubdirectory } = getCurrentPageInfo();
+        const { isSubdirectory, currentLang } = getCurrentPageInfo();
         const navbarPath = isSubdirectory ? '../navbar.html' : 'navbar.html';
         
         // Fetch the navbar HTML
@@ -29,6 +44,11 @@ async function loadNavbar() {
         if (isSubdirectory) {
             // Replace image paths for Spanish pages
             navbarHTML = navbarHTML.replace(/src="images\//g, 'src="../images/');
+        }
+        
+        // Translate navbar if on Spanish page
+        if (currentLang === 'es') {
+            navbarHTML = translateNavbar(navbarHTML, 'es');
         }
         
         // Insert navbar at the top of body
@@ -49,6 +69,23 @@ async function loadNavbar() {
     } catch (error) {
         console.error('Error loading navbar:', error);
     }
+}
+
+function translateNavbar(html, language) {
+    if (!navbarTranslations[language]) return html;
+    
+    let translatedHtml = html;
+    const translations = navbarTranslations[language];
+    
+    // Translate text content of links
+    Object.keys(translations).forEach(englishText => {
+        const spanishText = translations[englishText];
+        // Use word boundaries to match exact words
+        const regex = new RegExp(`>\\s*${englishText}\\s*<`, 'g');
+        translatedHtml = translatedHtml.replace(regex, `> ${spanishText} <`);
+    });
+    
+    return translatedHtml;
 }
 
 function markCurrentPage() {
