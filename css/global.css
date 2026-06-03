@@ -646,7 +646,8 @@ section:not(#header) .content {
   padding: 6px;
   border-radius: 8px;
   display: none;
-  min-width: 140px;
+  min-width: 100%;
+  width: auto;
   z-index: 50;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
   flex-direction: column;
