@@ -208,7 +208,7 @@ function fixNavbarLinksForLanguage() {
     const { currentLang } = getCurrentPageInfo();
     if (currentLang !== 'es') return;
 
-    document.querySelectorAll('.navbar .link, .navbar .dropdown-link').forEach(link => {
+    document.querySelectorAll('.navbar a:not(.lang-link)').forEach(link => {
         const href = link.getAttribute('href');
         if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#') || href.startsWith('//')) {
             return;
