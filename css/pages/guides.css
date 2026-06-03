@@ -164,9 +164,24 @@
 }
 
 .legend-item div > div {
-    color: var(--description-color);
     font-size: 0.9em;
     line-height: 1.4;
+}
+
+.legend-text {
+    font-weight: 600;
+}
+
+.legend-text.primary {
+    color: #5ba3ff;
+}
+
+.legend-text.secondary {
+    color: #ff6b6b;
+}
+
+.legend-text.tertiary {
+    color: #51cf66;
 }
 
 /* Recipes Container */
