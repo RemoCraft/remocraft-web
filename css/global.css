@@ -169,6 +169,57 @@ section a:hover,
   color: var(--white-color);
 }
 
+.navbar .nav-dropdown {
+  position: relative;
+}
+
+.navbar .nav-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 220px;
+  flex-direction: column;
+  background: rgba(15, 7, 18, 0.95);
+  border: 1px solid rgba(98, 33, 151, 0.3);
+  border-radius: 14px;
+  padding: 8px 0;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.navbar .nav-dropdown:hover .dropdown-menu,
+.navbar .nav-dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+.navbar .dropdown-link {
+  color: var(--description-color);
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.navbar .dropdown-link:hover {
+  color: var(--white-color);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media screen and (max-width: 867px) {
+  .navbar .nav-dropdown .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .navbar .nav-dropdown .dropdown-link {
+    width: 100%;
+    padding: 12px 18px;
+  }
+}
+
 .navbar .menu-mobile .hamburger {
   color: var(--white-color);
   font-size: 20px;
