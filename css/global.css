@@ -486,7 +486,7 @@ section:not(#header) .content {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 8px 0;
+    margin: 0;
     padding: 14px 18px;
     font-size: 18px;
     border-radius: 16px;
@@ -494,6 +494,10 @@ section:not(#header) .content {
     color: var(--description-color);
     text-align: center;
     gap: 10px;
+  }
+
+  .lang-menu a + .lang-menu a {
+    margin-top: 8px;
   }
 
   .lang-menu a .lang-flag {
