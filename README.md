@@ -43,3 +43,20 @@ RemoCraft Web es el sitio oficial de tu servidor de Minecraft, diseñado para pr
 
 ## Resumen rápido
 RemoCraft Web es un sitio estático bilingüe que presenta el servidor de Minecraft, su comunidad y sus guías. Su arquitectura es modular, con contenidos compartidos para navbar/footer y páginas específicas por idioma. El foco de desarrollo actual está en ampliar y mejorar las guías, especialmente las relacionadas con el sistema de crafteo y la experiencia sólida.
+
+## Notas para desarrolladores
+- La web es bilingüe y debe mantener la misma estructura en inglés y español.
+- `navbar.html` contiene la navegación principal; `js/navbar-loader.js` carga esta barra y ajusta los enlaces para `/es/` automáticamente.
+- Los modos principales en el home usan tarjetas con imagen hover, por ejemplo:
+  - `img` con `data-hover-prefix="..."`, `data-hover-count` y `data-hover-extension`.
+  - El prefijo debe coincidir con los nombres reales de las imágenes en `images/`.
+  - En las tarjetas de los modos deben añadirse enlaces reales `Learn more` / `Saber más` a las ramas de guías correspondientes, no botones vacíos.
+- La nueva modalidad debe seguir el mismo patrón que las existentes:
+  - `Ores` en inglés y `Minerales` en español.
+  - URLs de guía como `/guides/ores/` y `/es/guides/ores/`, no páginas sueltas en la raíz.
+  - Las ramas de guías deben tener un `index.html` con estructura de guía en el mismo formato que `guides/bedwars/` y `guides/survival_towny/`.
+  - Los subpáginas de una rama de guía deben usar la misma clase de cabecera de modo en `section#header`, por ejemplo `class="survival-header"` para Towny o `class="ores-header"` para Ores, para obtener la imagen de fondo correcta.
+  - Si una tarjeta o botón dentro de las guías no apunta a ninguna página, debe eliminarse temporalmente hasta que haya una página real.
+- Use el mismo estilo de metadatos Open Graph y `canonical`/`alternate hreflang` para cada idioma y rama de guía.
+- La carpeta `images/` puede contener variantes hover numeradas, por ejemplo `ores-minigames-image-1.webp` a `ores-minigames-image-5.webp`, y el código `home.js` generará las rutas.
+- Nota importante: cuando el usuario indique que se ha aprendido algo nuevo sobre la estructura de las guías o el comportamiento bilingüe, actualiza explícitamente esta sección de desarrollador con el aprendizaje más reciente.

@@ -30,6 +30,10 @@
     background-image: url("../../images/survival-minigames-image.webp");
 }
 
+#header.ores-header {
+    background-image: url("../../images/ores-minigames-image.webp");
+}
+
 #header .content .info {
     display: flex;
     flex-direction: column;
