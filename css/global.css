@@ -668,3 +668,5 @@ section:not(#header) .content {
 }
 .lang-menu a:hover { background: rgba(255,255,255,0.03); color: var(--white-color); }
 .lang-link.active { color: var(--white-color); font-weight: 800; }
+
+
