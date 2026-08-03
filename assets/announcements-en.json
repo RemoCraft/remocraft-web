@@ -1,5 +1,18 @@
 [
   {
+    "number": 56,
+    "title": "**🎉 New VIP Perks, Balance Changes & More**",
+    "body": "We're back with another batch of improvements! Here's a summary of the latest changes:\n\n────────────────────────\n🎁 **New VIP Kits**\n────────────────────────\n\nVIP players can now use:\n\n➡️ **/kits**\n\nThis command is available in both **Ores** and **Survival Towny**, allowing you to claim exclusive rewards **every 14 days**.\n\nKits are **cumulative** based on your VIP rank. For example:\n\n💎 **Diamond VIP** can claim:\n• Diamond Kit\n• Gold Kit\n• Iron Kit\n• Copper Kit\n\n────────────────────────\n⛏️ **Pickaxe Balance Changes**\n────────────────────────\n\nWe've fixed an issue where certain **Rank F** pickaxes with **Efficiency VI** could instantly mine **Deepslate**, while higher-rank pickaxes could not.\n\nThe progression is now properly balanced:\n\n• You'll need a **Rank A** pickaxe with **Efficiency VI** and **Haste II**, **or**\n• A **Rank S** pickaxe with **Efficiency VI**.\n\nThis makes progression much more consistent across all ranks.\n\n────────────────────────\n🛒 **Shop Improvements**\n────────────────────────\n\nWe've added several missing items to the spawn shops, along with a number of suggestions from the community.\n\n────────────────────────\n🛠️ **Other Changes**\n────────────────────────\n\nAs always, we've also made various minor bug fixes, optimizations, and quality-of-life improvements to keep enhancing the gameplay experience.\n\nThank you for continuing to support RemoCraft! ❤️\n",
+    "url": "https://github.com/RemoCraft/remocraft-web/issues/56",
+    "created_at": "2026-08-03T12:19:18Z",
+    "updated_at": "2026-08-03T12:19:23Z",
+    "state": "open",
+    "author": "RemoCraft Announcements",
+    "labels": [
+      "announcement-en"
+    ]
+  },
+  {
     "number": 54,
     "title": "**📢 Recent Improvements & Updates**",
     "body": "This announcement probably should have come a bit sooner, as we've added quite a few things over the last few days. Anyway, here's a summary of the latest updates!\n\n────────────────────────\n📱 **Bedrock Support is Here!**\n────────────────────────\n\nRemoCraft now supports **Minecraft Bedrock Edition**.\n\nThe server IP is still the same:\n\n**play.remocraft.com**\n\nIf you're playing on Bedrock, simply use **port 2275**.\n\n────────────────────────\n⛏️ **Ores Updates**\n────────────────────────\n\nWe've made several improvements to the **Ores** gamemode:\n\n• Fixed various bugs.\n• Rebalanced several custom items.\n• Adjusted the drop rates of some crate rewards.\n\n────────────────────────\n🏘️ **Survival Towny Improvements**\n────────────────────────\n\nWe've changed how players interact with NPCs.\n\nNPCs now use a **graphical interface** instead of chat, since the previous system wasn't compatible with Bedrock players.\n\nAdditionally:\n\n• Added new blocks to the **Builder** job.\n• Fixed several graphical issues affecting some jobs.\n• Resolved a variety of other small gameplay bugs.\n\n────────────────────────\n🛠️ **General Optimizations**\n────────────────────────\n\nWe've also made many smaller improvements that you may not notice immediately:\n\n• Bug fixes.\n• Performance optimizations.\n• Internal stability improvements.\n• Various gameplay tweaks across different systems.\n\nThere are probably a few other minor changes we've forgotten to mention, but most of our recent work has been focused on **improving stability and polishing existing mechanics**, rather than introducing entirely new features.\n\nThank you for continuing to support RemoCraft and helping us improve the server! ❤️\n",
