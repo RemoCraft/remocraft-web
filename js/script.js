@@ -10,6 +10,8 @@ Object.assign(window.config, {
         serverLogoImageFileName: "logo.png", /*This is a file name for logo in /images/ (If you upload new logo with other name, you must change this value)*/
         serverName: "RemoCraft", /*Server name*/
         serverIp: "play.remocraft.com", /*Server IP / domain for Minecraft server status*/
+        serverBedrockPort: "2275", /*Port for Bedrock players*/
+        serverBedrockAddress: "play.remocraft.com:2275", /*Complete Bedrock address*/
         discordServerID: "1249803735157309500" /*Your Discord server ID. Set this to your real server ID after enabling the Widget in Discord settings.*/
     }
 });
@@ -125,34 +127,50 @@ const getMinecraftOnlinePlayer = async () => {
 }
 
 /*IP copy only works if you have HTTPS on your website*/
+const copyToClipboard = async (text, successMessage, errorMessage, alertElement) => {
+    try {
+        await navigator.clipboard.writeText(text);
+
+        alertElement.innerHTML = successMessage;
+        alertElement.classList.add("active");
+        alertElement.classList.remove("error");
+
+        setTimeout(() => {
+            alertElement.classList.remove("active");
+            alertElement.classList.remove("error");
+        }, 5000);
+    } catch (e) {
+        console.log(e);
+        alertElement.innerHTML = errorMessage;
+        alertElement.classList.add("active");
+        alertElement.classList.add("error");
+
+        setTimeout(() => {
+            alertElement.classList.remove("active");
+            alertElement.classList.remove("error");
+        }, 5000);
+    }
+};
+
 const copyIp = () => {
     const copyIpButton = document.querySelector(".copy-ip");
+    const copyBedrockButton = document.querySelector(".copy-bedrock");
     const copyIpAlert = document.querySelector(".ip-copied");
 
-    // Si el botón no existe en la página, no hacer nada
-    if (!copyIpButton) return;
+    if (!copyIpAlert) return;
 
-    copyIpButton.addEventListener("click", () => {
-        try {
-            navigator.clipboard.writeText(config.serverInfo.serverIp);
-    
-            copyIpAlert.classList.add("active");
+    if (copyIpButton) {
+        copyIpButton.addEventListener("click", () => {
+            copyToClipboard(config.serverInfo.serverIp, "IP copied successfully!", "An error has occurred!", copyIpAlert);
+        });
+    }
 
-            setTimeout(() => {
-                copyIpAlert.classList.remove("active");
-            }, 5000);
-        } catch (e) {
-            console.log(e);
-            copyIpAlert.innerHTML = "An error has occurred!";
-            copyIpAlert.classList.add("active");
-            copyIpAlert.classList.add("error");
-
-            setTimeout(() => {
-                copyIpAlert.classList.remove("active");
-                copyIpAlert.classList.remove("error");
-            }, 5000);
-        }
-    })
+    if (copyBedrockButton) {
+        copyBedrockButton.addEventListener("click", () => {
+            const bedrockAddress = config.serverInfo.serverBedrockAddress || `${config.serverInfo.serverIp}:${config.serverInfo.serverBedrockPort}`;
+            copyToClipboard(bedrockAddress, "Bedrock address copied successfully!", "An error has occurred!", copyIpAlert);
+        });
+    }
 }
 
 const setDataFromConfigToHtml = async () => {
@@ -164,6 +182,11 @@ const setDataFromConfigToHtml = async () => {
 
     /*Set config data to header*/
     if (serverIp) serverIp.innerHTML = config.serverInfo.serverIp;
+
+    const javaAddressChip = document.querySelector(".address-info .java-pill");
+    const bedrockAddressChip = document.querySelector(".address-info .bedrock-pill");
+    if (javaAddressChip) javaAddressChip.innerHTML = `Java: ${config.serverInfo.serverIp}`;
+    if (bedrockAddressChip) bedrockAddressChip.innerHTML = `Bedrock: ${config.serverInfo.serverBedrockPort}`;
 
     const locationPathname = location.pathname;
     const isHomePage = locationPathname === "/" || locationPathname === "/es/" || locationPathname.includes("index");
