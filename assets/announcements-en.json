@@ -1,5 +1,18 @@
 [
   {
+    "number": 58,
+    "title": "**🎂🎉 RemoCraft Birthday Event Has Begun! 🎉🎂**",
+    "body": "🎂✨ **RemoCraft's Birthday has arrived!** ✨🎂\n\nTomorrow, **August 25th**, is RemoCraft's birthday! 🥳\n\nTo celebrate, **RemoCraftMC** prepared some cakes... but it seems he went a little too far with Creative Mode, because **they've come to life!** 😱\n\nHead to the **area outside spawn** and defeat these cakes and candles to earn all kinds of rewards!\n\n────────────────────────\n🍰 **Event Rewards**\n────────────────────────\n\nDefeating the enemies will give you:\n\n🎂 **Cake:** 5 event points\n🕯️ **Candle:** 3 event points\n\nYou can also get:\n• 🎂 **Birthday Shulker**, a special reward that returns every year.\n• 🏆 **This year's Birthday Trophy**, an exclusive item that changes every year and will never be the same.\n• 🔑 Crate Keys.\n• ✨ Solid XP.\n• 💰 Money.\n• ⭐ Experience.\n• 🎁 And many more rewards!\n\n────────────────────────\n🏆 **EVENT TOP**\n────────────────────────\n\nAnd of course, the **TOP** is back!\n\n🥇 **TOP 1:** 99 days of VIP\n🥈 **TOP 2:** 67 days of VIP 👀\n🥉 **TOP 3:** 33 days of VIP\n🏅 **TOP 4–5:** 16 days of VIP\n🏅 **TOP 6–10:** 8 days of VIP\n\n👀 Yes, the **67** is intentional.\n\nDon't miss your chance to earn a huge amount of VIP and exclusive rewards!\n\n────────────────────────\n🛍️ **REMOCRAFT SUPER DEALS**\n────────────────────────\n\nAnd to celebrate the birthday properly...\n\n🔥 **RemoCraft SUPER DEALS have begun!** 🔥\n\n**Diamond VIP is cheaper than ever**, along with many other special offers.\n\n🛒 **shop.remocraft.com**\n\nHappy Birthday, RemoCraft! 🎂❤️\n\nAnd good luck to everyone in the event! 🍰🔥\n",
+    "url": "https://github.com/RemoCraft/remocraft-web/issues/58",
+    "created_at": "2026-08-24T13:53:06Z",
+    "updated_at": "2026-08-24T13:53:06Z",
+    "state": "open",
+    "author": "RemoCraft Announcements",
+    "labels": [
+      "announcement-en"
+    ]
+  },
+  {
     "number": 56,
     "title": "**🎉 New VIP Perks, Balance Changes & More**",
     "body": "We're back with another batch of improvements! Here's a summary of the latest changes:\n\n────────────────────────\n🎁 **New VIP Kits**\n────────────────────────\n\nVIP players can now use:\n\n➡️ **/kits**\n\nThis command is available in both **Ores** and **Survival Towny**, allowing you to claim exclusive rewards **every 14 days**.\n\nKits are **cumulative** based on your VIP rank. For example:\n\n💎 **Diamond VIP** can claim:\n• Diamond Kit\n• Gold Kit\n• Iron Kit\n• Copper Kit\n\n────────────────────────\n⛏️ **Pickaxe Balance Changes**\n────────────────────────\n\nWe've fixed an issue where certain **Rank F** pickaxes with **Efficiency VI** could instantly mine **Deepslate**, while higher-rank pickaxes could not.\n\nThe progression is now properly balanced:\n\n• You'll need a **Rank A** pickaxe with **Efficiency VI** and **Haste II**, **or**\n• A **Rank S** pickaxe with **Efficiency VI**.\n\nThis makes progression much more consistent across all ranks.\n\n────────────────────────\n🛒 **Shop Improvements**\n────────────────────────\n\nWe've added several missing items to the spawn shops, along with a number of suggestions from the community.\n\n────────────────────────\n🛠️ **Other Changes**\n────────────────────────\n\nAs always, we've also made various minor bug fixes, optimizations, and quality-of-life improvements to keep enhancing the gameplay experience.\n\nThank you for continuing to support RemoCraft! ❤️\n",
