@@ -59,7 +59,7 @@
       <div class="minecraft-rules rules">
         <h2 class="minecraft-rules-title rules-title">Reglas del Servidor</h2>
         <p>Estas reglas sustituyen al formato antiguo y buscan ser más claras, proporcionales y útiles para la gestión del servidor. Las sanciones indicadas son orientativas: cada caso se analiza individualmente, pero la acumulación de warns, mutes o sanciones menores puede derivar en una sanción superior o en un ban si el historial del jugador lo justifica.</p>
-        <p><strong>Importante:</strong> aunque dos reglas no estén relacionadas directamente, el acumulado de varias faltas, incluso de distintos tipos, puede desencadenar una sanción mayor. Esto incluye conductas de chat, comportamiento tóxico, abuso de PvP, bugs, lag, skins/nicks inapropiados y usos indebidos de ventajas VIP.</p>
+        <p><strong>Importante:</strong> aunque dos reglas no estén relacionadas directamente, el acumulado de varias faltas, incluso de distintos tipos, puede desencadenar una sanción mayor. Esto incluye conductas de chat, comportamiento tóxico, abuso de PvP, bugs, lag, skins y nicks inapropiados, y usos indebidos de ventajas VIP.</p>
         <p><strong>VIP no exime de cumplir las normas:</strong> tener rango VIP no te da permiso para saltarte las reglas. Si rompes una norma, también puedes recibir la sanción correspondiente y, en caso de reincidencia, una medida más fuerte.</p>
 
         <div class="rules-summary">
@@ -70,80 +70,69 @@
                 <th>Regla</th>
                 <th>Descripción</th>
                 <th>Sanción</th>
-                <th>Extra</th>
-                <th>Extra ++</th>
+                <th>Acumulación</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Uso de hacks NO ADMITIDO</td>
-                <td>Detectado usando hacks y lo niega.</td>
-                <td>Ban 15 días</td>
-                <td>Ban 30 días</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Uso de hacks ADMITIDO</td>
-                <td>Detectado usando hacks y lo admite.</td>
-                <td>Ban 7 días</td>
-                <td>Ban 30 días</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Uso de hacks AUTOADMITIDO</td>
-                <td>Se admite el uso sin que nadie lo detecte.</td>
-                <td>Ban 7 días</td>
-                <td>Ban 30 días</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Autoclicker / macros para PvP</td>
-                <td>No permitido para PvP ni combates similares.</td>
-                <td>Mismo criterio que hacks</td>
-                <td></td>
-                <td></td>
+                <td>Uso de hacks</td>
+                <td>Uso de cheats o modificaciones para obtener ventaja injusta.</td>
+                <td>15 días de ban si niega; 7 días si admite</td>
+                <td>Puede escalar a 30 días si hay reincidencia o agravantes</td>
               </tr>
               <tr>
                 <td>TPAKILL</td>
                 <td>Matar tras aceptar un /tpa o /tpahere, o con coordinación entre varios jugadores.</td>
                 <td>Ban 3 días</td>
-                <td></td>
-                <td></td>
+                <td>Si se repite, se considera agravante</td>
               </tr>
               <tr>
-                <td>SPAWNKILL</td>
+                <td>Spawnkill</td>
                 <td>Matar repetidamente cerca del spawn, cama o punto de aparición.</td>
                 <td>Ban 3 días</td>
-                <td></td>
-                <td></td>
+                <td>Se puede elevar si afecta a varios jugadores o se repite</td>
               </tr>
               <tr>
-                <td>Lenguaje muy ofensivo</td>
-                <td>Racismo, sexismo, xenofobia, insultos graves, etc.</td>
-                <td>Warn</td>
-                <td>Ban 24h</td>
-                <td></td>
+                <td>Lenguaje discriminatorio o extremadamente ofensivo</td>
+                <td>Racismo, sexismo, xenofobia, insultos graves o contenido ofensivo.</td>
+                <td>Warn o ban 24h según gravedad</td>
+                <td>Reincidencias pueden derivar en ban más largo</td>
               </tr>
               <tr>
-                <td>Actitud tóxica</td>
-                <td>Acoso, provocaciones, burlas repetidas o estafas.</td>
-                <td>Se decide según el caso</td>
-                <td></td>
-                <td></td>
+                <td>Acoso o actitud tóxica</td>
+                <td>Provocaciones, burlas repetidas, estafas o acoso persistente.</td>
+                <td>Warn, mute o sanción inmediata según el caso</td>
+                <td>El acumulado de varios avisos puede desembocar en ban</td>
               </tr>
               <tr>
-                <td>Lag machines</td>
-                <td>Máquinas o construcciones que generan lag intencionadamente.</td>
+                <td>PvP desactivado en zona</td>
+                <td>Abusar de zonas sin PvP activo usando lava, explosiones, trampas o cualquier método para matar a otro jugador.</td>
+                <td>Warn o sanción proporcional</td>
+                <td>Si se repite o afecta a varios jugadores, puede escalar</td>
+              </tr>
+              <tr>
+                <td>Explotación de bugs o exploits</td>
+                <td>Abusar fallos del servidor para obtener recursos o ventajas injustas.</td>
+                <td>Ban proporcional de 1 a 7 días</td>
+                <td>Si se repite o hay beneficio grande, puede ser mayor</td>
+              </tr>
+              <tr>
+                <td>Máquinas de lag o abuso de sistema</td>
+                <td>Generar lag intencionadamente o abusar de mecánicas no autorizadas.</td>
                 <td>Warn + quitar máquina</td>
-                <td>Ban 1 día</td>
-                <td></td>
+                <td>Si se repite, puede pasar a ban de 1 día o más</td>
               </tr>
               <tr>
-                <td>3 vs 1</td>
-                <td>Agrupaciones para atacar a un solo jugador sin previo acuerdo.</td>
-                <td>Warn + quitar todo</td>
-                <td></td>
-                <td></td>
+                <td>Chat: spam, flood o mayúsculas</td>
+                <td>Mensajes repetitivos, flood, letras repetidas o uso excesivo de mayúsculas.</td>
+                <td>Warn o mute 5-15 minutos</td>
+                <td>La repetición puede llevar a mute más largo o ban</td>
+              </tr>
+              <tr>
+                <td>Skins, nicks o construcciones inadecuadas</td>
+                <td>Contenido ofensivo, sexual, degradante o que perjudica la experiencia del resto.</td>
+                <td>Warn o ban corto</td>
+                <td>Si se repite, se considera agravante</td>
               </tr>
             </tbody>
           </table>
@@ -151,12 +140,12 @@
 
         <ol class="rules-list">
           <li class="rule">
-            <strong>Uso de hacks / cheats</strong>
+            <strong>Uso de hacks o cheats</strong>
             <ul>
               <li>Se prohíbe cualquier modificación no autorizada para obtener ventajas injustas, como X-ray, fly, speed, autoclicker para PvP o cualquier tipo de cheat.</li>
-              <li>Si detectamos a alguien usando hacks y lo niega: sanción de 15 días de ban, pudiendo elevarse a 30 días si hay reincidencia o agravantes.</li>
-              <li>Si lo admite al ser preguntado: sanción de 7 días de ban, pudiendo llegar a 30 días según el caso.</li>
-              <li>Si el jugador admite por su propia cuenta el uso del hack o se le detecta sin que nadie lo señale: sanción de 7 días de ban, con posibilidad de aumento a 30 días si se confirma reiteración.</li>
+              <li>Si detectamos a alguien usando hacks y lo niega, la sanción suele ser de 15 días de ban, pudiendo elevarse a 30 días si hay reincidencia o agravantes.</li>
+              <li>Si lo admite al ser preguntado, suele ser un ban de 7 días, pudiendo llegar a 30 días según el caso.</li>
+              <li>Si se admite por propia iniciativa o se detecta sin que nadie lo señale, también suele considerarse un ban de 7 días, con posibilidad de aumento si la reincidencia lo justifica.</li>
             </ul>
           </li>
           <li class="rule">
@@ -164,21 +153,22 @@
             <ul>
               <li>TPAKILL: está prohibido matar a alguien después de aceptar un /tpa o /tpahere. También aplica si varios jugadores se coordinan para que uno acepte el tpa y otro u otros lo maten.</li>
               <li>SPAWNKILL: está prohibido matar repetidamente a alguien en su zona de aparición, cama, spawn o punto de regreso, impidiéndole jugar normalmente. Pueden existir excepciones si el jugador afectado está incumpliendo normas, pero siempre será valorado por el staff.</li>
-              <li>3 vs 1: no se permite atacar a un solo jugador con varios compañeros si no existe un acuerdo previo, una guerra de tierras o una provocación clara. El objetivo es evitar matar a la primera persona que vean en grupo para abusar del número.</li>
+              <li>3 vs 1: no se permite atacar a un solo jugador con varios compañeros si no existe un acuerdo previo, una guerra de tierras o una provocación clara. El objetivo es evitar que un grupo mate de forma abusiva a la primera persona que vea.</li>
               <li>Desconectarse en PvP: si un jugador se desconecta en mitad de un combate para evitar morir, puede recibir warn y, en caso de repetición, sanciones mayores.</li>
-              <li>PVP cuando no está activado: matar intencionadamente a otro jugador cuando no hay PvP activo para ese usuario es sancionable.</li>
-              <li>Robar cuando no está el PVP activado: no puedes aprovechar el PvP cerrado o la ausencia de permiso para robar a jugadores que no están en combate activo.</li>
+              <li>PvP cuando no está activado: matar intencionadamente a otro jugador cuando no hay PvP activo para ese usuario es sancionable.</li>
+              <li>Robar cuando no está activo el PvP: no puedes aprovechar el PvP cerrado o la ausencia de permiso para robar a jugadores que no están en combate activo.</li>
+              <li>PvP desactivado en una zona: si una zona tiene PvP desactivado, no puedes abusar de ese estado usando lava, explosiones, trampas o cualquier otra mecánica para matar o perjudicar a otros jugadores.</li>
             </ul>
           </li>
           <li class="rule">
             <strong>Lenguaje, insultos y contenido ofensivo</strong>
             <ul>
-              <li>Lenguaje muy ofensivo, racista, sexista, homófobo, xenófobo u otro tipo de expresiones discriminatorias están totalmente prohibidas. Aunque se diga "en broma", no se acepta ni se justifica.</li>
-              <li>Insultos básicos como "imbécil", "gilipollas", "retrasado" o equivalentes pueden ser tratados como warn y mute corto, y si se repiten se puede escalar a sanciones mayores.</li>
+              <li>El lenguaje discriminatorio, racista, sexista, homófobo, xenófobo u otro tipo de expresiones ofensivas están totalmente prohibidas. Aunque se diga "en broma", no se acepta ni se justifica.</li>
+              <li>Insultos básicos como "imbécil", "gilipollas", "retrasado" o equivalentes pueden ser tratados como warn y mute corto, y si se repiten pueden escalar a sanciones mayores.</li>
               <li>Hablar de temas políticos: no se considera adecuado discutir política dentro del servidor.</li>
               <li>Religiones: se permite rolplay o referencias históricas, pero no se permite incitar a otras personas a seguir una religión o a moverse hacia creencias concretas.</li>
               <li>Escenas explícitas o mensajes con contenido sexual o provocador: se sancionan con warn, mute o ban según la gravedad y la repetición.</li>
-              <li>Instigación por mensaje: si se repite el acoso o la amenaza por mensajes, se puede escalar desde warn hasta ban. </li>
+              <li>Instigación por mensaje: si se repite el acoso o la amenaza por mensajes, se puede escalar desde warn hasta ban.</li>
             </ul>
           </li>
           <li class="rule">
@@ -205,7 +195,7 @@
           <li class="rule">
             <strong>Exploits, bugs y economía</strong>
             <ul>
-              <li>Explotación de bugs o exploits: cualquier bug explotado para obtener recursos, ventajas o beneficios injustos debe reportarse antes de abusa-rse de él. La sanción puede ir desde eliminar el beneficio hasta un ban proporcional de 1 a 7 días, según la gravedad.</li>
+              <li>Explotación de bugs o exploits: cualquier bug explotado para obtener recursos, ventajas o beneficios injustos debe reportarse antes de abusarse de él. La sanción puede ir desde eliminar el beneficio hasta un ban proporcional de 1 a 7 días, según la gravedad.</li>
               <li>Uso de máquinas de lag o abuso de sistemas del servidor no autorizados puede llevar a aviso, eliminación del contenido y, si se repite, sanción más fuerte.</li>
             </ul>
           </li>
