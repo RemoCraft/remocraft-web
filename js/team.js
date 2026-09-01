@@ -34,6 +34,12 @@ Object.assign(window.config, {
                 rank: "Moderator",
                 skinUrlOrPathToFile: "",
                 rankColor: ""
+            },
+            {
+                inGameName: "Gehzt630",
+                rank: "Moderator",
+                skinUrlOrPathToFile: "",
+                rankColor: ""
             }
         ],
         helpers: [
@@ -44,13 +50,13 @@ Object.assign(window.config, {
                 rankColor: ""
             },
             {
-                inGameName: "Gehzt630",
+                inGameName: "canaldejuan",
                 rank: "Helper",
                 skinUrlOrPathToFile: "",
                 rankColor: ""
             },
             {
-                inGameName: "Nyxxie_",
+                inGameName: "ParoMC_6s",
                 rank: "Helper",
                 skinUrlOrPathToFile: "",
                 rankColor: ""
