@@ -56,7 +56,7 @@ Object.assign(window.config, {
                 rankColor: ""
             },
             {
-                inGameName: "ParoMC_6s",
+                inGameName: "PatoMC_6s",
                 rank: "Helper",
                 skinUrlOrPathToFile: "",
                 rankColor: ""
