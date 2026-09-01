@@ -47,6 +47,7 @@ RemoCraft Web es un sitio estático bilingüe que presenta el servidor de Minecr
 ## Notas para desarrolladores
 - La web es bilingüe y debe mantener la misma estructura en inglés y español.
 - `navbar.html` contiene la navegación principal; `js/navbar-loader.js` carga esta barra y ajusta los enlaces para `/es/` automáticamente.
+- En la home, los bloques de estado del header deben ser enlaces reales: el de Discord debe apuntar al invite oficial y el de servidor debe abrir la IP del servidor con el esquema `minecraft://` para que el usuario pueda entrar directamente desde el navegador.
 - Los modos principales en el home usan tarjetas con imagen hover, por ejemplo:
   - `img` con `data-hover-prefix="..."`, `data-hover-count` y `data-hover-extension`.
   - El prefijo debe coincidir con los nombres reales de las imágenes en `images/`.
